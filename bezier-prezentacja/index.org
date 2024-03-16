@@ -1,0 +1,10 @@
+#+title: Krzywe Bézier w robotyce
+#+options: date:nil author:nil timestamp:nil toc:nil
+#+reveal_root: ../reveal.js
+
+* Pierwszy nagłówek
+* Drugi nagłówek
+#+reveal: split reveal_extra_attr: data-background-iframe="../bezier-app/index.html" data-background-interactive
+
+* Trzeci nagłówek
+
