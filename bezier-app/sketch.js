@@ -33,11 +33,11 @@ function setup() {
 	    Aligned: "A",
 	    Mirrored: "B",
 	    Free: "C",
-	    Automatic: "D",
+	    // Automatic: "D",
 	})
 	.setValue("A");
-    controlSpacing = gui.add(settings, "controlSpacing", 0, 1, 0.01);
-    resetState = gui.add(settings, "resetState");
+    // controlSpacing = gui.add(settings, "controlSpacing", 0, 1, 0.01);
+    // resetState = gui.add(settings, "resetState");
 }
 
 // function keyPressed() {
@@ -78,11 +78,18 @@ function touchStarted() {
     if (!fs) {
 	fullscreen(true);
     }
-    for (const p of path.points) {
-	if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-	    moving = p;
+    
+    if (touches.length == 2) {
+	path.addSegment(mouseX, mouseY);
+    } else {
+	for (const p of path.points) {
+	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+		moving = p;
+		return false;
+	    }
 	}
     }
+    
     // prevent default
     return false;
 }
