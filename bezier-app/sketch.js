@@ -79,7 +79,7 @@ function setup() {
 function mousePressed() {
     if (mouseButton == LEFT) {
 	for (const p of path.points) {
-	    if (dist(p.x, p.y, mouseX, mouseY) < 10) {
+	    if (dist(p.x, p.y, mouseX, mouseY) < 20) {
 		moving = p;
 		return;
 	    }
