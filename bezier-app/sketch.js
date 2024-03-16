@@ -49,14 +49,36 @@ function setup() {
 // }
 
 function mousePressed() {
-    if (mouseButton == LEFT) {
-	for (const p of path.points) {
-	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-		moving = p;
-		return;
+    if (touches.length >= 1) {
+	var fs = fullscreen();
+	if (!fs) {
+	    fullscreen(true);
+	}
+    
+	if (touches.length == 2) {
+	    path.addSegment(mouseX, mouseY);
+	    return false;
+	} else {
+	    for (const p of path.points) {
+		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+		    moving = p;
+		    return false;
+		}
 	    }
 	}
-    }
+    
+	// prevent default
+	// return false;
+    } else {
+	if (mouseButton == LEFT) {
+	    for (const p of path.points) {
+		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+		    moving = p;
+		    return;
+		}
+	    }
+	}
+    }    
 }
  
 function doubleClicked() {
@@ -73,27 +95,27 @@ function mouseReleased() {
     if (moving) moving = null;
 }
 
-function touchStarted() {
-    var fs = fullscreen();
-    if (!fs) {
-	fullscreen(true);
-    }
+// function touchStarted() {
+//     var fs = fullscreen();
+//     if (!fs) {
+// 	fullscreen(true);
+//     }
     
-    if (touches.length == 2) {
-	path.addSegment(mouseX, mouseY);
-	return false;
-    } else {
-	for (const p of path.points) {
-	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-		moving = p;
-		return false;
-	    }
-	}
-    }
+//     if (touches.length == 2) {
+// 	path.addSegment(mouseX, mouseY);
+// 	return false;
+//     } else {
+// 	for (const p of path.points) {
+// 	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+// 		moving = p;
+// 		return false;
+// 	    }
+// 	}
+//     }
     
-    // prevent default
-    // return false;
-}
+//     // prevent default
+//     // return false;
+// }
 
 function touchMoved() {
     if (moving) {
@@ -319,7 +341,7 @@ class Path {
 
 /* full screening will change the size of the canvas */
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight);
 }
 
 /* prevents the mobile browser from processing some default
