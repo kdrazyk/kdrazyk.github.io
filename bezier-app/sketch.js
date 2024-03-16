@@ -37,7 +37,7 @@ function setup() {
 	})
 	.setValue("A");
     // controlSpacing = gui.add(settings, "controlSpacing", 0, 1, 0.01);
-    // resetState = gui.add(settings, "resetState");
+    resetState = gui.add(settings, "resetState");
 }
 
 // function keyPressed() {
@@ -81,6 +81,7 @@ function touchStarted() {
     
     if (touches.length == 2) {
 	path.addSegment(mouseX, mouseY);
+	return false;
     } else {
 	for (const p of path.points) {
 	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
@@ -91,7 +92,7 @@ function touchStarted() {
     }
     
     // prevent default
-    return false;
+    // return false;
 }
 
 function touchMoved() {
@@ -115,14 +116,14 @@ function draw() {
     } else {
 	path.auto = false;
     }
-    // if (resetState.getValue() == true) {
-    // 	path.points = [];
-    // 	path.points.push(createVector(width / 2 - 100, height / 2));
-    // 	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
-    // 	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
-    // 	path.points.push(createVector(width / 2 + 100, height / 2));
-    // 	resetState.setValue(false);
-    // }
+    if (resetState.getValue() == true) {
+	path.points = [];
+	path.points.push(createVector(width / 2 - 100, height / 2));
+	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
+	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
+	path.points.push(createVector(width / 2 + 100, height / 2));
+	resetState.setValue(false);
+    }
     path.render();
 }
 
