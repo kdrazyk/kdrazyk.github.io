@@ -36,6 +36,16 @@ function setup() {
 	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
 	path.points.push(createVector(width / 2 + 100, height / 2));
     })
+    button.touchStarted(() => {
+	path.points = [];
+	path.points.push(createVector(width / 2 - 100, height / 2));
+	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
+	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
+	path.points.push(createVector(width / 2 + 100, height / 2));
+    })
+    mySelect.touchStarted(() => {
+	mySelect.mousePressed();
+    })
 }
 
 function mousePressed() {
