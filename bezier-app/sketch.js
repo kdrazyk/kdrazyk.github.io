@@ -8,77 +8,46 @@ let hand_color = '#FEDD5D';
 let line_color = '#FEDD5D';
 let line2_color = '#3e4a54';
 
-
 let path;
 let moving = null;
-
-let shift = false;
-let gui;
-
-let controlMode;
-let exported;
-let settings = {
-    // closed: false,
-    controlMode: "",
-    controlSpacing: 0.5,
-    resetState: false,
-};
+let controlMode = "A";
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     path = new Path();
-    gui = new dat.GUI();
-    controlMode = gui
-	.add(settings, "controlMode", {
-	    Aligned: "A",
-	    Mirrored: "B",
-	    Free: "C",
-	    // Automatic: "D",
-	})
-	.setValue("A");
-    // controlSpacing = gui.add(settings, "controlSpacing", 0, 1, 0.01);
-    resetState = gui.add(settings, "resetState");
+
+    mySelect = createSelect();
+    mySelect.position(10, 10);
+
+    // Add color options.
+    mySelect.option('Aligned');
+    mySelect.option('Mirrored');
+    mySelect.option('Free');
+
+    // Set the selected option to "red".
+    mySelect.selected('Aligned');
+
+    let button = createButton('Reset');
+    button.position(100, 10);
+    button.mousePressed(() => {
+	path.points = [];
+	path.points.push(createVector(width / 2 - 100, height / 2));
+	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
+	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
+	path.points.push(createVector(width / 2 + 100, height / 2));
+    })
 }
 
-// function keyPressed() {
-//     if (keyCode == SHIFT) shift = true;
-// }
-
-// function keyReleased() {
-//     if (keyCode == SHIFT) shift = false;
-// }
-
 function mousePressed() {
-    if (touches.length >= 1) {
-	var fs = fullscreen();
-	if (!fs) {
-	    fullscreen(true);
-	}
-    
-	if (touches.length == 2) {
-	    path.addSegment(mouseX, mouseY);
-	    return false;
-	} else {
-	    for (const p of path.points) {
-		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-		    moving = p;
-		    return false;
-		}
+    if (mouseButton == LEFT) {
+	for (const p of path.points) {
+	    if (dist(p.x, p.y, mouseX, mouseY) < 10) {
+		moving = p;
+		return;
 	    }
 	}
+    }
     
-	// prevent default
-	// return false;
-    } else {
-	if (mouseButton == LEFT) {
-	    for (const p of path.points) {
-		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-		    moving = p;
-		    return;
-		}
-	    }
-	}
-    }    
 }
  
 function doubleClicked() {
@@ -87,7 +56,7 @@ function doubleClicked() {
 
 function mouseDragged() {
     if (moving) {
-	path.movePoint(moving, mouseX, mouseY, controlMode.getValue());
+	path.movePoint(moving, mouseX, mouseY, controlMode);
     }
 }
 
@@ -95,31 +64,31 @@ function mouseReleased() {
     if (moving) moving = null;
 }
 
-// function touchStarted() {
-//     var fs = fullscreen();
-//     if (!fs) {
-// 	fullscreen(true);
-//     }
+function touchStarted() {
+    var fs = fullscreen();
+    if (!fs) {
+	fullscreen(true);
+    }
     
-//     if (touches.length == 2) {
-// 	path.addSegment(mouseX, mouseY);
-// 	return false;
-//     } else {
-// 	for (const p of path.points) {
-// 	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-// 		moving = p;
-// 		return false;
-// 	    }
-// 	}
-//     }
+    if (touches.length == 2) {
+	path.addSegment(mouseX, mouseY);
+	return false;
+    } else {
+	for (const p of path.points) {
+	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+		moving = p;
+		return false;
+	    }
+	}
+    }
     
-//     // prevent default
-//     // return false;
-// }
+    // prevent default
+    return false;
+}
 
 function touchMoved() {
     if (moving) {
-	path.movePoint(moving, mouseX, mouseY, controlMode.getValue());
+	path.movePoint(moving, mouseX, mouseY, controlMode);
     }
     return false;
 }
@@ -132,20 +101,25 @@ function touchEnded() {
 
 function draw() {
     background(bg_color);
-    if (controlMode.getValue() == "D") {
+
+    if (mySelect.selected() == 'Aligned') { controlMode = 'A'; }
+    else if (mySelect.selected() == 'Mirrored') { controlMode = 'B'; }
+    else if (mySelect.selected() == 'Free') { controlMode = 'C'; }
+    
+    if (controlMode == "D") {
 	path.auto = true;
 	path.autoSetAllControlPoints(controlSpacing.getValue());
     } else {
 	path.auto = false;
     }
-    if (resetState.getValue() == true) {
-	path.points = [];
-	path.points.push(createVector(width / 2 - 100, height / 2));
-	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
-	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
-	path.points.push(createVector(width / 2 + 100, height / 2));
-	resetState.setValue(false);
-    }
+    // if (resetState.getValue() == true) {
+    // 	path.points = [];
+    // 	path.points.push(createVector(width / 2 - 100, height / 2));
+    // 	path.points.push(createVector(width / 2 - 50, height / 2 - 50));
+    // 	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
+    // 	path.points.push(createVector(width / 2 + 100, height / 2));
+    // 	resetState.setValue(false);
+    // }
     path.render();
 }
 
