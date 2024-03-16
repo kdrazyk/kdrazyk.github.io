@@ -8,14 +8,6 @@ let hand_color = '#FEDD5D';
 let line_color = '#FEDD5D';
 let line2_color = '#3e4a54';
 
-// let bg_color = '#0e1a24';
-// let end_color = '#fa1050';
-// let bezier_color = '#34B9F8';
-// let hand_color = '#0FFFAC';
-// let line_color = '#0FFFAC';
-// let line2_color = '#FEDD5D';
-
-
 
 let path;
 let moving = null;
@@ -62,7 +54,7 @@ function mousePressed() {
 	    // path.addSegment(mouseX, mouseY);
 	} else {
 	    for (const p of path.points) {
-		if (dist(p.x, p.y, mouseX, mouseY) < 10) {
+		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
 		    moving = p;
 		    return;
 		}
@@ -293,3 +285,22 @@ class Path {
 	}
     }
 }
+
+function touchStarted () {
+  var fs = fullscreen();
+  if (!fs) {
+    fullscreen(true);
+  }
+}
+
+/* full screening will change the size of the canvas */
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+/* prevents the mobile browser from processing some default
+ * touch events, like swiping left for "back" or scrolling the page.
+ */
+document.ontouchmove = function(event) {
+    event.preventDefault();
+};
