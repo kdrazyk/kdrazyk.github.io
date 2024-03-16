@@ -3,9 +3,9 @@
 
 let bg_color = '#0e1a24';
 let end_color = '#34B9F8';
-let bezier_color = '#34B9F8';
+let bezier_color = '#24A9E8';
 let hand_color = '#FEDD5D';
-let line_color = '#FEDD5D';
+let line_color = '#EECD4D';
 let line2_color = '#3e4a54';
 
 let path;
@@ -16,19 +16,11 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     path = new Path();
 
-    mySelect = createSelect();
-    mySelect.position(10, 10);
-
-    // Add color options.
-    mySelect.option('Aligned');
-    mySelect.option('Mirrored');
-    mySelect.option('Free');
-
-    // Set the selected option to "red".
-    mySelect.selected('Aligned');
+    selectMode = createButton('Aligned');
+    selectMode.position(65, 10);
 
     let button = createButton('Reset');
-    button.position(100, 10);
+    button.position(10, 10);
     button.mousePressed(() => {
 	path.points = [];
 	path.points.push(createVector(width / 2 - 100, height / 2));
@@ -43,9 +35,38 @@ function setup() {
 	path.points.push(createVector(width / 2 + 50, height / 2 + 50));
 	path.points.push(createVector(width / 2 + 100, height / 2));
     })
-    mySelect.touchStarted(() => {
-	mySelect.mousePressed();
+
+    selectMode.mousePressed(() => {
+	if (controlMode == "A") {
+	    selectMode.html("Mirrored");
+	    controlMode = "B";
+	}
+	else if (controlMode == "B") {
+	    selectMode.html("Free");
+	    controlMode = "C";
+	}
+	else if (controlMode == "C") {
+	    selectMode.html("Aligned");
+	    controlMode = "A";
+	}
     })
+
+    selectMode.touchStarted(() => {
+	if (controlMode == "A") {
+	    selectMode.html("Mirrored");
+	    controlMode = "B";
+	}
+	else if (controlMode == "B") {
+	    selectMode.html("Free");
+	    controlMode = "C";
+	}
+	else if (controlMode == "C") {
+	    selectMode.html("Aligned");
+	    controlMode = "A";
+	}
+    })
+
+    
 }
 
 function mousePressed() {
@@ -112,9 +133,9 @@ function touchEnded() {
 function draw() {
     background(bg_color);
 
-    if (mySelect.selected() == 'Aligned') { controlMode = 'A'; }
-    else if (mySelect.selected() == 'Mirrored') { controlMode = 'B'; }
-    else if (mySelect.selected() == 'Free') { controlMode = 'C'; }
+    // if (mySelect.selected() == 'Aligned') { controlMode = 'A'; }
+    // else if (mySelect.selected() == 'Mirrored') { controlMode = 'B'; }
+    // else if (mySelect.selected() == 'Free') { controlMode = 'C'; }
     
     if (controlMode == "D") {
 	path.auto = true;
