@@ -40,29 +40,25 @@ function setup() {
     resetState = gui.add(settings, "resetState");
 }
 
-function keyPressed() {
-    if (keyCode == SHIFT) shift = true;
-}
+// function keyPressed() {
+//     if (keyCode == SHIFT) shift = true;
+// }
 
-function keyReleased() {
-    if (keyCode == SHIFT) shift = false;
-}
+// function keyReleased() {
+//     if (keyCode == SHIFT) shift = false;
+// }
 
 function mousePressed() {
     if (mouseButton == LEFT) {
-	if (shift) {
-	    // path.addSegment(mouseX, mouseY);
-	} else {
-	    for (const p of path.points) {
-		if (dist(p.x, p.y, mouseX, mouseY) < 50) {
-		    moving = p;
-		    return;
-		}
+	for (const p of path.points) {
+	    if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+		moving = p;
+		return;
 	    }
 	}
     }
 }
-
+ 
 function doubleClicked() {
     path.addSegment(mouseX, mouseY);
 }
@@ -76,6 +72,33 @@ function mouseDragged() {
 function mouseReleased() {
     if (moving) moving = null;
 }
+
+function touchStarted() {
+    var fs = fullscreen();
+    if (!fs) {
+	fullscreen(true);
+    }
+    for (const p of path.points) {
+	if (dist(p.x, p.y, mouseX, mouseY) < 50) {
+	    moving = p;
+	}
+    }
+    // prevent default
+    return false;
+}
+
+function touchMoved() {
+    if (moving) {
+	path.movePoint(moving, mouseX, mouseY, controlMode.getValue());
+    }
+    return false;
+}
+
+function touchEnded() {
+    if (moving) moving = null;
+    return false;
+}
+
 
 function draw() {
     background(bg_color);
@@ -284,13 +307,6 @@ class Path {
 	    }
 	}
     }
-}
-
-function touchStarted () {
-  var fs = fullscreen();
-  if (!fs) {
-    fullscreen(true);
-  }
 }
 
 /* full screening will change the size of the canvas */
