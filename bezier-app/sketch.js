@@ -8,6 +8,8 @@ let hand_color = '#FEDD5D';
 let line_color = '#EECD4D';
 let line2_color = '#3e4a54';
 
+let buttonStyle = 'background-color: #8e9aA4; border-color: #8e9aA4; border-radius: 4px; color: #0e1a24; font-size: large; width: 120px;';
+
 let path;
 let moving = null;
 let controlMode = "A";
@@ -16,10 +18,15 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     path = new Path();
 
-    selectMode = createButton('Aligned');
-    selectMode.position(65, 10);
-
+    let selectMode = createButton('Aligned');
     let button = createButton('Reset');
+    selectMode.position(140, 10);
+
+    selectMode.style(buttonStyle);
+    button.style(buttonStyle);
+
+
+    
     button.position(10, 10);
     button.mousePressed(() => {
 	path.points = [];
