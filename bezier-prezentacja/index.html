@@ -4,36 +4,95 @@
 <meta charset="utf-8"/>
 <title>Krzywe Bézier w robotyce</title>
 <meta name="author" content="Kacper Drążyk"/>
+<meta name="description" content="Prezentacja na temat krzywych Bézier i ich zastosowania w robotyce."/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
 <link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+<link rel="stylesheet" href="../reveal.js/dist/theme/bezier.css" id="theme"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Krzywe Bézier w robotyce</h1>
+<h1>Krzywe Bézier w robotyce</h1><h2></h2><h3> Kacper Drążyk</h3><img src="../qrcode.svg" style="width:600px; height:600px;"><p><a href="https://kdrazyk.github.io">https://kdrazyk.github.io</a></p><p>
 </section>
 
 <section>
-<section id="slide-1">
-<h2 id="1"><span class="section-number-2">1.</span> Pierwszy nagłówek</h2>
-</section>
-</section>
-<section>
-<section id="slide-2">
-<h2 id="2"><span class="section-number-2">2.</span> Drugi nagłówek</h2>
-</section>
-<section reveal_extra_attr: data-background-iframe="../bezier-app/index.html" data-background-interactive>
+<section id="slide-org62bb25c">
+<h2 id="org62bb25c">Czym są krzywe Bezier?</h2>
+<div style="display:flex; justify-content:center; align-items:center;">
+<p>
+\[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t) \end{cases} \]
+</p>
+
+
+<div id="orgb5672e6" class="figure">
+<p><img src="./img/Bezier_curve.svg" alt="Bezier_curve.svg" class="org-svg" height="600" />
+</p>
+</div>
+</div>
+
+<aside class="notes">
+<p>
+Krzywe Bezier należą do rodziny krzywych parametrycznych.
+</p>
+
+<p>
+Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bezier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
+</p>
+
+</aside>
 
 </section>
 </section>
 <section>
-<section id="slide-3">
-<h2 id="3"><span class="section-number-2">3.</span> Trzeci nagłówek</h2>
+<section id="slide-orga48cd6a">
+<h2 id="orga48cd6a">Gdzie są stosowane?</h2>
+<div style="display:flex; justify-content:center; align-items:center;">
+
+<div id="org08b2ac2" class="figure">
+<p><img src="./img/inkscape_bezier.png" alt="inkscape_bezier.png" height="500" />
+</p>
+</div>
+
+
+<div id="org4ab5d12" class="figure">
+<p><img src="./img/jumping_squares.gif" alt="jumping_squares.gif" height="500" />
+</p>
+</div>
+
+
+<div id="org4af4ec2" class="figure">
+<p><img src="./img/fanuc_lrm200id.jpg" alt="fanuc_lrm200id.jpg" height="500" />
+</p>
+</div>
+</div>
+
+<aside class="notes">
+<p>
+Krzywe Bezier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
+</p>
+
+<p>
+Pierre Bezier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
+</p>
+
+<p>
+Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
+</p>
+
+</aside>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org428ec46">
+<h2 id="org428ec46">Trajektorie w robotyce</h2>
 </section>
 </section>
 </div>
@@ -52,7 +111,7 @@ controls: true,
 progress: true,
 history: false,
 center: true,
-slideNumber: 'c',
+slideNumber: false,
 rollingLinks: false,
 keyboard: true,
 mouseWheel: false,
@@ -60,8 +119,10 @@ fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: true,
 overview: true,
+width: 1400,
+height: 1000,
 
-transition: 'convex',
+transition: 'slide',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x

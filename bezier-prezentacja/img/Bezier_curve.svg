@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="800"
+   height="500"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="Bezier_curve.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.77092773"
+     inkscape:cx="503.28972"
+     inkscape:cy="223.75638"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <style
+     id="style1">
+		text {
+			font-family: sans-serif;
+			font-size: 40px;
+		}
+		
+		.sub {
+			baseline-shift: sub;
+			font-size: 20px;
+		}
+	</style>
+  <defs
+     id="defs1">
+    <path
+       id="x"
+       d="M-10,-10 10 10 M-10,10 10,-10"
+       stroke="#000"
+       fill="none" />
+  </defs>
+  <g
+     stroke="#000"
+     fill="none"
+     id="g2"
+     style="fill:none;stroke:#ffffff;fill-opacity:1;stroke-opacity:1">
+    <path
+       stroke-width="2.5"
+       d="M70,420 C150,70 700,145 650,420"
+       id="path1"
+       style="fill:none;stroke:#ffffff;fill-opacity:1;stroke-opacity:1" />
+    <path
+       stroke-width="1.5"
+       stroke-dasharray="15,15"
+       d="M70,420 150,70 700,145 650,420"
+       id="path2"
+       style="fill:none;stroke:#ffffff;fill-opacity:1;stroke-opacity:1" />
+  </g>
+  <text
+     x="20"
+     y="460"
+     id="text5"
+     style="fill:#fe1053;stroke:none;fill-opacity:1">P<tspan
+   class="sub"
+   id="tspan5"
+   style="fill:#fe1053;stroke:none;fill-opacity:1">0</tspan></text>
+  <text
+     x="100"
+     y="60"
+     id="text6"
+     style="fill:#33bbfb;stroke:none;fill-opacity:1">P<tspan
+   class="sub"
+   id="tspan6"
+   style="fill:#33bbfb;stroke:none;fill-opacity:1">1</tspan></text>
+  <text
+     x="720"
+     y="125"
+     id="text7"
+     style="fill:#0cffa7;stroke:none;fill-opacity:1">P<tspan
+   class="sub"
+   id="tspan7"
+   style="fill:#0cffa7;stroke:none;fill-opacity:1">2</tspan></text>
+  <text
+     x="670"
+     y="470"
+     id="text8"
+     style="fill:#ffdd4e;stroke:none;fill-opacity:1">P<tspan
+   class="sub"
+   id="tspan8"
+   style="fill:#ffdd4e;stroke:none;fill-opacity:1">3</tspan></text>
+  <circle
+     style="fill:#fe1053;fill-opacity:1;stroke:none;stroke-width:0.308697;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     id="path8"
+     cx="70"
+     cy="420"
+     r="6" />
+  <circle
+     style="fill:#33bbfb;fill-opacity:1;stroke:none;stroke-width:0.308697;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     id="circle8"
+     cx="150"
+     cy="70"
+     r="6" />
+  <circle
+     style="fill:#ffdd4e;fill-opacity:1;stroke:none;stroke-width:0.308697;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     id="circle9"
+     cx="650"
+     cy="420"
+     r="6" />
+  <circle
+     style="fill:#0cffa7;fill-opacity:1;stroke:none;stroke-width:0.308697;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     id="circle10"
+     cx="700"
+     cy="145"
+     r="6" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-linecap:round"
+     x="258.50989"
+     y="451.01569"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="258.50989"
+       y="451.01569"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff">Krzywa III rzędu</tspan></text>
+</svg>

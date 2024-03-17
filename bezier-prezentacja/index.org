@@ -1,10 +1,65 @@
+:properties:
 #+title: Krzywe Bézier w robotyce
-#+options: date:nil author:nil timestamp:nil toc:nil
+#+author: Kacper Drążyk
+#+date: <2024-03-17 Sun>
+#+description: Prezentacja na temat krzywych Bézier i ich zastosowania w robotyce.
+#+startup: show2levels latexpreview
+#+options: date:nil author:nil timestamp:nil toc:nil reveal_slide_number:nil num:nil reveal_width:1400 reveal_height:1000
 #+reveal_root: ../reveal.js
+#+reveal_trans: slide
+#+reveal_theme: bezier
+#+reveal_hlevel: 1
+# Set up the title slide.
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%A %a</h3><img src="%q" style="width:600px; height:600px;"><p><a href="%u">%u</a></p><p>
+#+REVEAL_TALK_URL: https://kdrazyk.github.io
+#+REVEAL_TALK_QR_CODE: ../qrcode.svg
 
-* Pierwszy nagłówek
-* Drugi nagłówek
-#+reveal: split reveal_extra_attr: data-background-iframe="../bezier-app/index.html" data-background-interactive
+# paleta kolorów
+# #FFFFFF biały
+# #FE1053 czerwony
+# #33BBFB niebieski
+# #0CFFA7 zielony
+# #FFDD4E żółty
+:end:
 
-* Trzeci nagłówek
+* Czym są krzywe Bezier?
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+\[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t) \end{cases} \]
+# https://en.wikipedia.org/wiki/B%C3%A9zier_curve#/media/File:Bezier_curve.svg
+#+ATTR_HTML: :height 600
+[[./img/Bezier_curve.svg]]
+#+REVEAL_HTML: </div>
 
+#+begin_notes
+Krzywe Bezier należą do rodziny krzywych parametrycznych.
+
+Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bezier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
+#+end_notes
+
+* Gdzie są stosowane?
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+#+ATTR_HTML: :height 500
+[[./img/inkscape_bezier.png]]
+# https://github.com/rezaerami/IconBox
+#+ATTR_HTML: :height 500
+[[./img/jumping_squares.gif]]
+# https://www.fanuc.eu/~/media/corporate/products/robots/lrmate/generic/400x600/int-ro-pr-lrm200-l-1.jpg
+#+ATTR_HTML: :height 500
+[[./img/fanuc_lrm200id.jpg]]
+#+REVEAL_HTML: </div>
+
+#+begin_notes
+Krzywe Bezier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
+
+Pierre Bezier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
+
+Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
+#+end_notes
+
+
+
+# #+reveal: split reveal_extra_attr: data-background-iframe="../bezier-app/index.html" data-background-interactive
+
+
+
+* Trajektorie w robotyce
