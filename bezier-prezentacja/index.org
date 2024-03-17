@@ -140,6 +140,7 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 ** Algorytm de Casteljau
 #+REVEAL_HTML: <video width="960" data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
 
+#+ATTR_REVEAL: :frag fade-in
 Krzywa Bézier II rzędu
 
 *** Krzywa Bézier III rzędu
@@ -173,6 +174,11 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 * Spline - funkcja sklejana
 #+REVEAL_HTML: <video width="1200" data-autoplay data-src="./img/spline.mp4" type="video/mp4"></video>
 
+#+REVEAL: split
+#+ATTR_HTML: :height 800
+[[./img/spline-basis.png]]
+
+
 ** Ciągłość
 #+ATTR_HTML: :height 800
 [[./img/c0.png]]
@@ -192,9 +198,15 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 ** C2 - przyspieszenie
 #+REVEAL_HTML: <video width="1200" data-autoplay data-src="./img/c2.mp4" type="video/mp4"></video>
 
-
 ** Inne opcje
 #+REVEAL_HTML: <video width="1200" loop data-autoplay data-src="./img/nurbs.mp4" type="video/mp4"></video>
+
+* Zadanie robotyka
+# https://robotics.stackexchange.com/questions/18102/what-are-the-equations-of-a-s-curve-position-path
+
+#+ATTR_HTML: :height 800
+[[./img/s-curve.png]]
+
 
 * Badania naukowe
 #+ATTR_HTML: :height 800
