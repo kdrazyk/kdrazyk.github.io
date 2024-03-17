@@ -16,83 +16,17 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide">
-<h1>Krzywe Bézier w robotyce</h1><h2></h2><h3> Kacper Drążyk</h3><img src="../qrcode.svg" style="width:600px; height:600px;"><p><a href="https://kdrazyk.github.io">https://kdrazyk.github.io</a></p><p>
-</section>
-
 <section>
-<section id="slide-org62bb25c">
-<h2 id="org62bb25c">Czym są krzywe Bezier?</h2>
-<div style="display:flex; justify-content:center; align-items:center;">
-<p>
-\[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t) \end{cases} \]
-</p>
-
-
-<div id="orgb5672e6" class="figure">
-<p><img src="./img/Bezier_curve.svg" alt="Bezier_curve.svg" class="org-svg" height="600" />
-</p>
-</div>
-</div>
-
-<aside class="notes">
-<p>
-Krzywe Bezier należą do rodziny krzywych parametrycznych.
-</p>
+<section id="slide-orgee7b387">
+<h2 id="orgee7b387">Interpolacja liniowa</h2>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 
 <p>
-Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bezier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
+\[\displaystyle \mathbf {B} (t)=\mathbf {P} _{0}+t(\mathbf {P} _{1}-\mathbf {P} _{0})=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
 </p>
 
-</aside>
-
-</section>
-</section>
-<section>
-<section id="slide-orga48cd6a">
-<h2 id="orga48cd6a">Gdzie są stosowane?</h2>
-<div style="display:flex; justify-content:center; align-items:center;">
-
-<div id="org08b2ac2" class="figure">
-<p><img src="./img/inkscape_bezier.png" alt="inkscape_bezier.png" height="500" />
-</p>
+<video width="960" loop data-autoplay data-src="./img/lerp.mp4" type="video/mp4"></video>
 </div>
-
-
-<div id="org4ab5d12" class="figure">
-<p><img src="./img/jumping_squares.gif" alt="jumping_squares.gif" height="500" />
-</p>
-</div>
-
-
-<div id="org4af4ec2" class="figure">
-<p><img src="./img/fanuc_lrm200id.jpg" alt="fanuc_lrm200id.jpg" height="500" />
-</p>
-</div>
-</div>
-
-<aside class="notes">
-<p>
-Krzywe Bezier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
-</p>
-
-<p>
-Pierre Bezier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
-</p>
-
-<p>
-Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
-</p>
-
-</aside>
-
-
-
-</section>
-</section>
-<section>
-<section id="slide-org428ec46">
-<h2 id="org428ec46">Trajektorie w robotyce</h2>
 </section>
 </section>
 </div>

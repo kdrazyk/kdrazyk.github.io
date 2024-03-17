@@ -24,7 +24,7 @@
 
 * Czym są krzywe Bezier?
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
-\[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t) \end{cases} \]
+\[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t)\\t \in \mathbb R \end{cases} \]
 # https://en.wikipedia.org/wiki/B%C3%A9zier_curve#/media/File:Bezier_curve.svg
 #+ATTR_HTML: :height 600
 [[./img/Bezier_curve.svg]]
@@ -56,10 +56,38 @@ Pierre Bezier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych progr
 Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
 #+end_notes
 
-
-
-# #+reveal: split reveal_extra_attr: data-background-iframe="../bezier-app/index.html" data-background-interactive
-
-
-
 * Trajektorie w robotyce
+# https://xkcd.com/2821/
+#+ATTR_HTML: :height 600
+[[./img/xkcd-bezier.svg]]
+
+** Point to point
+** Corner smoothing
+** Krzywe Bezier
+
+* Opis matematyczny
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
+#+ATTR_HTML: :height 600
+[[./img/bezier-app-qrcode.svg]]
+
+https://kdrazyk.github.io/ → Aplikacja
+#+REVEAL_HTML: </div>
+
+#+REVEAL: split data-background-iframe="../bezier-app/index.html" data-background-interactive
+
+** Interpolacja liniowa
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
+
+\[\displaystyle \mathbf {B} (t)=\mathbf {P} _{0}+t(\mathbf {P} _{1}-\mathbf {P} _{0})=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
+
+#+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/lerp.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: </div>
+
+
+
+
+
+** Algorytm de Casteljau
+#+REVEAL_HTML: <video width="960" data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
+
+
