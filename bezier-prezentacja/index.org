@@ -10,7 +10,7 @@
 #+reveal_theme: bezier
 #+reveal_hlevel: 1
 # Set up the title slide.
-#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h2>%s</h2><h3>%A %a</h3><img src="%q" style="width:600px; height:600px;"><p><a href="%u">%u</a></p><p>
+#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h2>%s</h2><h3>%A %a</h3><img src="%q" style="width:500px; height:500px;"><p><a href="%u">%u</a></p><p>
 #+REVEAL_TALK_URL: https://kdrazyk.github.io
 #+REVEAL_TALK_QR_CODE: ../qrcode.svg
 
