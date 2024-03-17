@@ -21,15 +21,15 @@
 </section>
 
 <section>
-<section id="slide-org2633b11">
-<h2 id="org2633b11">Czym są krzywe Bezier?</h2>
+<section id="slide-org3a1a3b0">
+<h2 id="org3a1a3b0">Czym są krzywe Bézier</h2>
 <div style="display:flex; justify-content:center; align-items:center;">
 <p>
 \[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t)\\t \in [0,1] \end{cases} \]
 </p>
 
 
-<div id="org294e558" class="figure">
+<div id="org88ae9d2" class="figure">
 <p><img src="./img/Bezier_curve.svg" alt="Bezier_curve.svg" class="org-svg" height="600" />
 </p>
 </div>
@@ -40,8 +40,54 @@
 Krzywe Bezier należą do rodziny krzywych parametrycznych.
 </p>
 
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org826be42">
+<h3 id="org826be42">Historia</h3>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+<div style="width:30vw;">
+
+
+<div id="org62108c7" class="figure">
+<p><img src="./img/Paul_de_Casteljau.jpg" alt="Paul_de_Casteljau.jpg" height="300" />
+</p>
+</div>
+
 <p>
-Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bezier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
+Paul de Casteljau
+</p>
+</div>
+<div style="width:30vw;">
+
+
+<div id="org7ff986f" class="figure">
+<p><img src="./img/Pierre_Bezier.jpg" alt="Pierre_Bezier.jpg" height="300" />
+</p>
+</div>
+
+<p>
+Pierre Bézier
+</p>
+</div>
+<div style="width:30vw;">
+
+<div id="org0f02e27" class="figure">
+<p><img src="./img/Peugeot_204.jpg" alt="Peugeot_204.jpg" height="300" />
+</p>
+</div>
+
+<p>
+Peugeot 204
+</p>
+</div>
+</div>
+
+<aside class="notes">
+<p>
+Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bézier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
 </p>
 
 </aside>
@@ -49,23 +95,23 @@ Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyk
 </section>
 </section>
 <section>
-<section id="slide-orgac055d6">
-<h2 id="orgac055d6">Gdzie są stosowane?</h2>
+<section id="slide-orga35aa0c">
+<h2 id="orga35aa0c">Gdzie są stosowane?</h2>
 <div style="display:flex; justify-content:center; align-items:center;">
 
-<div id="orgd229119" class="figure">
+<div id="orga66cd7a" class="figure">
 <p><img src="./img/inkscape_bezier.png" alt="inkscape_bezier.png" height="500" />
 </p>
 </div>
 
 
-<div id="org42506f9" class="figure">
+<div id="orgcaddf55" class="figure">
 <p><img src="./img/jumping_squares.gif" alt="jumping_squares.gif" height="500" />
 </p>
 </div>
 
 
-<div id="orgce99c30" class="figure">
+<div id="org3a63d94" class="figure">
 <p><img src="./img/fanuc_lrm200id.jpg" alt="fanuc_lrm200id.jpg" height="500" />
 </p>
 </div>
@@ -73,11 +119,11 @@ Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyk
 
 <aside class="notes">
 <p>
-Krzywe Bezier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
+Krzywe Bézier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
 </p>
 
 <p>
-Pierre Bezier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
+Pierre Bézier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
 </p>
 
 <p>
@@ -89,39 +135,100 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 </section>
 </section>
 <section>
-<section id="slide-orge868e8c">
-<h2 id="orge868e8c">Trajektorie w robotyce</h2>
+<section id="slide-org4d39b25">
+<h2 id="org4d39b25">Planowanie trajektorii</h2>
 
-<div id="org4a5284a" class="figure">
+<div id="org68b15e9" class="figure">
 <p><img src="./img/xkcd-bezier.svg" alt="xkcd-bezier.svg" class="org-svg" height="800" />
 </p>
 </div>
 
 </section>
-<section id="slide-orgebb37e5">
-<h3 id="orgebb37e5">Point to point</h3>
 </section>
-<section id="slide-org6dc694c">
-<h3 id="org6dc694c">Corner smoothing</h3>
-</section>
-<section id="slide-org5a6bad4">
-<h3 id="org5a6bad4">Krzywe Bezier</h3>
+<section>
+<section id="slide-orgd74df04">
+<h3 id="orgd74df04">Point to point</h3>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+
+<div id="orgbad0f64" class="figure">
+<p><img src="./img/point-to-point.svg" alt="point-to-point.svg" class="org-svg" height="800" />
+</p>
+</div>
+
+<ul>
+<li>interpolacja liniowa pomiędzy punktami</li>
+<li>konieczne zatrzymanie w każdym punkcie</li>
+<li>małe wymagania obliczeniowe</li>
+
+</ul>
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgcb1236a">
-<h2 id="orgcb1236a">Opis matematyczny</h2>
+<section id="slide-org6ff0f83">
+<h3 id="org6ff0f83">Corner smoothing</h3>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="org8e629f5" class="figure">
+<div id="org67240aa" class="figure">
+<p><img src="./img/corner-smoothing.svg" alt="corner-smoothing.svg" class="org-svg" height="800" />
+</p>
+</div>
+
+<ul>
+<li>łagodniejsze zmiany kierunku</li>
+<li>nie każdy punkt jest osiągany</li>
+<li>większe wymagania obliczeniowe</li>
+
+</ul>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2986fe7">
+<h3 id="org2986fe7">Krzywe Bézier</h3>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+
+<div id="orgb9146bd" class="figure">
+<p><img src="./img/bezier-trajektoria.svg" alt="bezier-trajektoria.svg" class="org-svg" height="800" />
+</p>
+</div>
+
+<ul>
+<li>dowolna płynność ruchu</li>
+<li>punkty mogą być osiągane</li>
+<li>największe wymagania obliczeniowe</li>
+
+</ul>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc235e41">
+<h2 id="orgc235e41">Opis matematyczny</h2>
+<div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+
+
+<div id="orgcb2d425" class="figure">
 <p><img src="./img/welding-robot.jpg" alt="welding-robot.jpg" height="800" />
 </p>
 </div>
 
 
+<div id="orgb59ad4f" class="figure">
+<p><img src="./img/kerfus-tm-scaled.jpg" alt="kerfus-tm-scaled.jpg" height="800" />
+</p>
+</div>
+
+</div>
+
 </section>
-<section id="slide-orge387b22">
-<h3 id="orge387b22">Interpolacja liniowa</h3>
+</section>
+<section>
+<section id="slide-org85e6fe2">
+<h3 id="org85e6fe2">Interpolacja liniowa</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 <p>
 \[\displaystyle \mathbf {P} (t)=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
@@ -131,36 +238,35 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 </div>
 
 </section>
-<section id="slide-org9f7787f">
-<h3 id="org9f7787f">Algorytm de Casteljau</h3>
+</section>
+<section>
+<section id="slide-orga16f85f">
+<h3 id="orga16f85f">Algorytm de Casteljau</h3>
 <video width="960" data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
 
 <p>
-Krzywa Bezier II rzędu
+Krzywa Bézier II rzędu
 </p>
 
 </section>
+</section>
 <section>
+<section id="slide-orgbf56b87">
+<h4 id="orgbf56b87">Krzywa Bézier III rzędu</h4>
 <video width="960" data-autoplay data-src="./img/de_casteljau2.mp4" type="video/mp4"></video>
 
-<p>
-Krzywa Bezier III rzędu
-</p>
-
+</section>
 </section>
 <section>
+<section id="slide-orgf611fc0">
+<h4 id="orgf611fc0">Krzywa Bézier XII rzędu</h4>
 <video width="960" data-autoplay data-src="./img/de_casteljau12.mp4" type="video/mp4"></video>
 
-<p>
-Krzywa Bezier XII rzędu
-</p>
-
+</section>
 </section>
 <section>
-<p>
-Równanie opisaujące krzywą III rzędu
-</p>
-
+<section id="slide-orgc0ef788">
+<h4 id="orgc0ef788">Równanie opisaujące krzywą III rzędu</h4>
 <p>
 \[\displaystyle \mathbf {B} (t)=(1-t)^{3}\mathbf {P} _{0}+3(1-t)^{2}t\mathbf {P} _{1}+3(1-t)t^{2}\mathbf {P} _{2}+t^{3}\mathbf {P} _{3},\ 0\leq t\leq 1\]
 </p>
@@ -170,11 +276,13 @@ Równanie opisaujące krzywą III rzędu
 </p>
 
 </section>
-<section id="slide-org1ae4d6d">
-<h3 id="org1ae4d6d">Wielomiany Bernsteina</h3>
+</section>
+<section>
+<section id="slide-org71b4acc">
+<h3 id="org71b4acc">Wielomiany Bernsteina</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="orgdefc18c" class="figure">
+<div id="orgf6db1cc" class="figure">
 <p><img src="./img/bernstein3.png" alt="bernstein3.png" height="600" />
 </p>
 </div>
@@ -185,45 +293,93 @@ Równanie opisaujące krzywą III rzędu
 </div>
 
 </section>
+</section>
 <section>
+<section id="slide-org3c2151e">
+<h4 id="org3c2151e">Zakres oddziaływań punktów</h4>
 
-<div id="org1623622" class="figure">
+<div id="orgc619a92" class="figure">
 <p><img src="./img/bernstein.png" alt="bernstein.png" height="800" />
 </p>
 </div>
 
 <p class="fragment fade-in">
-Krzywe Bezier nie umożliwiają kontroli lokalnej
+Krzywe Bézier nie umożliwiają kontroli lokalnej
 </p>
 
 </section>
 </section>
 <section>
-<section id="slide-org21a64f6">
-<h2 id="org21a64f6">Spline - funkcja sklejana</h2>
-<div class="outline-text-2" id="text-org21a64f6">
+<section id="slide-orga7d6c14">
+<h2 id="orga7d6c14">Spline - funkcja sklejana</h2>
+<video width="1200" data-autoplay data-src="./img/spline.mp4" type="video/mp4"></video>
+
+</section>
+</section>
+<section>
+<section id="slide-orgecde418">
+<h3 id="orgecde418">Ciągłość</h3>
+
+<div id="orgb2a6062" class="figure">
+<p><img src="./img/c0.png" alt="c0.png" height="800" />
+</p>
 </div>
-</section>
-<section id="slide-orgad79c0d">
-<h3 id="orgad79c0d">Ciągłość</h3>
 
 </section>
-<section id="slide-org9c32e5a">
-<h3 id="org9c32e5a">NURBS</h3>
+<section>
+<p>
+\[\mathbf B(t) = \begin{bmatrix} 1 & t & t^2 & t^3 \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
+</p>
+
+<p class="fragment fade-in">
+\[ \frac{d}{dt} \mathbf B(t) = \begin{bmatrix} 0 & 1 & 2t & 3t^2 \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
+</p>
+
+<p class="fragment fade-in">
+\[ \frac{d^2}{dt^2} \mathbf B(t) = \begin{bmatrix} 0 & 0 & 2 & 6t \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
+</p>
 
 </section>
 </section>
 <section>
-<section id="slide-org1a357a6">
-<h2 id="org1a357a6">Badania naukowe</h2>
+<section id="slide-orgd257a70">
+<h3 id="orgd257a70">C1 - prędkość</h3>
+<video width="1200" data-autoplay data-src="./img/velocity.mp4" type="video/mp4"></video>
+
 </section>
 </section>
 <section>
-<section id="slide-org977d383">
-<h2 id="org977d383">Aplikacja</h2>
+<section id="slide-orge845d05">
+<h3 id="orge845d05">C2 - przyspieszenie</h3>
+<video width="1200" data-autoplay data-src="./img/c2.mp4" type="video/mp4"></video>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgbcee876">
+<h3 id="orgbcee876">Inne opcje</h3>
+<video width="1200" loop data-autoplay data-src="./img/nurbs.mp4" type="video/mp4"></video>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf84dfb7">
+<h2 id="orgf84dfb7">Badania naukowe</h2>
+
+<div id="orgedaa147" class="figure">
+<p><img src="./img/research.png" alt="research.png" height="800" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org29f859e">
+<h2 id="org29f859e">Aplikacja</h2>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 
-<div id="orgf481c2f" class="figure">
+<div id="orgfa1344c" class="figure">
 <p><img src="./img/bezier-app-qrcode.svg" alt="bezier-app-qrcode.svg" class="org-svg" height="600" />
 </p>
 </div>
@@ -238,16 +394,39 @@ Krzywe Bezier nie umożliwiają kontroli lokalnej
 </section>
 </section>
 <section>
-<section id="slide-orge7e88aa">
-<h2 id="orge7e88aa">Dziękuję za uwagę</h2>
+<section id="slide-org2145b00">
+<h2 id="org2145b00">Dziękuję za uwagę</h2>
 <p>
 Najważniejszy wniosek:
 </p>
 <blockquote>
 <p>
-Ruchy po krzywych bezier są płynniejsze, co ogranicza drgania i zużycie części, a zwiększa wydajność i dokładność.
+Ruchy po krzywych bezier są płynniejsze, co ogranicza drgania i zużycie części, a zwiększa wydajność oraz dokładność.
 </p>
 </blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd8671c6">
+<h2 id="orgd8671c6">Bibliografia</h2>
+
+<div id="org86c6ccd" class="figure">
+<p><img src="./img/the_continuity_of_splines.jpg" alt="the_continuity_of_splines.jpg" height="600" />
+</p>
+</div>
+
+<p>
+<a href="https://www.youtube.com/watch?v=jvPPXbo87ds">https://www.youtube.com/watch?v=jvPPXbo87ds</a>
+</p>
+
+</section>
+<section>
+
+<ul>
+<li>inne źródła</li>
+
+</ul>
 </section>
 </section>
 </div>
@@ -266,7 +445,7 @@ controls: true,
 progress: true,
 history: false,
 center: true,
-slideNumber: 't',
+slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 mouseWheel: false,
