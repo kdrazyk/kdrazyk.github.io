@@ -77,14 +77,10 @@ https://kdrazyk.github.io/ → Aplikacja
 
 ** Interpolacja liniowa
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
-
 \[\displaystyle \mathbf {B} (t)=\mathbf {P} _{0}+t(\mathbf {P} _{1}-\mathbf {P} _{0})=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
 
 #+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/lerp.mp4" type="video/mp4"></video>
 #+REVEAL_HTML: </div>
-
-
-
 
 
 ** Algorytm de Casteljau
