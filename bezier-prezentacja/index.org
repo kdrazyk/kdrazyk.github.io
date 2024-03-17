@@ -212,15 +212,22 @@ https://kdrazyk.github.io/ → Aplikacja
 * Dziękuję za uwagę
 Najważniejszy wniosek:
 #+begin_quote
-Ruchy po krzywych bezier są płynniejsze, co ogranicza drgania i zużycie części, a zwiększa wydajność oraz dokładność.
+Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez zwiększają wydajność oraz dokładność robotów.
 #+end_quote
 
 * Bibliografia
 #+ATTR_HTML: :height 600
 [[./img/the_continuity_of_splines.jpg]]
 
+*Freya Holmér*
+
 https://www.youtube.com/watch?v=jvPPXbo87ds
 
 #+REVEAL: split
 
-- inne źródła
+- https://www.mdpi.com/2076-3417/13/15/8789
+- https://www.mdpi.com/2076-3417/13/24/13210
+- https://pl.wikipedia.org/wiki/NURBS
+- https://en.wikipedia.org/wiki/B-spline
+- https://en.wikipedia.org/wiki/B%C3%A9zier_curve
+
