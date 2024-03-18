@@ -51,6 +51,7 @@ Paul de Casteljau
 Pierre Bézier
 #+REVEAL_HTML: </div>
 #+REVEAL_HTML: <div style="width:30vw;">
+# https://en.wikipedia.org/wiki/Peugeot_204#/media/File:Peugeot_204_front_20120630.jpg
 #+ATTR_HTML: :height 300
 [[./img/Peugeot_204.jpg]]
 
@@ -66,7 +67,7 @@ Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyk
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
 #+ATTR_HTML: :height 500
 [[./img/inkscape_bezier.png]]
-# https://github.com/rezaerami/IconBox
+# https://github.com/rezaerami/IconBoxw
 #+ATTR_HTML: :height 500
 [[./img/jumping_squares.gif]]
 # https://www.fanuc.eu/~/media/corporate/products/robots/lrmate/generic/400x600/int-ro-pr-lrm200-l-1.jpg
@@ -119,7 +120,6 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 
 * Opis matematyczny
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
-# https://en.wikipedia.org/wiki/B%C3%A9zier_curve#/media/File:Quadratic_Béziers_in_string_art.svg
 #+ATTR_HTML: :height 800
 [[./img/welding-robot.jpg]]
 
@@ -178,7 +178,6 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 #+ATTR_HTML: :height 800
 [[./img/spline-basis.png]]
 
-
 ** Ciągłość
 #+ATTR_HTML: :height 800
 [[./img/c0.png]]
@@ -206,7 +205,6 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 
 #+ATTR_HTML: :height 800
 [[./img/s-curve.png]]
-
 
 * Badania naukowe
 #+ATTR_HTML: :height 800
@@ -236,9 +234,21 @@ Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez zwię
 #+end_quote
 
 * Bibliografia
-- https://www.mdpi.com/2076-3417/13/15/8789
-- https://www.mdpi.com/2076-3417/13/24/13210
-- https://pl.wikipedia.org/wiki/NURBS
-- https://en.wikipedia.org/wiki/B-spline
-- https://en.wikipedia.org/wiki/B%C3%A9zier_curve
-
+- Wikipedia, Bézier curve, https://en.wikipedia.org/wiki/B%C3%A9zier_curve
+- Wikipedia, B-spline, https://en.wikipedia.org/wiki/B-spline
+- Wikipedia, NURBS, https://pl.wikipedia.org/wiki/NURBS
+- Li et al., Smooth Interpolation Design with Consideration of Corner Tolerance Constraints for Robotics, https://www.mdpi.com/2076-3417/13/15/8789
+- Li et al., A High-Precision Planar NURBS Interpolation System Based on Segmentation Method for Industrial Robot, https://www.mdpi.com/2076-3417/13/24/13210
+- Freya Holmér, /The Continuity of Splines/,  https://www.youtube.com/watch?v=jvPPXbo87ds
+- Freya Holmér, /The Beauty of Bézier Curves/ https://www.youtube.com/watch?v=aVwxzDHniEw
+- The Coding Train / Simon Tiger, aplikacja do rysowania krzywych bézier, https://editor.p5js.org/codingtrain/sketches/_R7RgtGfA
+  
+* Źródła rysunków
+- =https://en.wikipedia.org/wiki/B%C3%A9zier_curve-/media/File:Bezier_curve.svg=
+- =https://alchetron.com/Paul-de-Casteljau= 
+- =https://en.wikipedia.org/wiki/File:Img-Pierre_Bézier.jpg=
+- =https://en.wikipedia.org/wiki/Peugeot_204-/media/File:Peugeot_204_front_20120630.jpg=
+- =https://www.fanuc.eu/~/media/corporate/products/robots/lrmate/generic/400x600/int-ro-pr-lrm200-l-1.jpg=
+- =https://xkcd.com/2821/=
+- =https://tech-mate.pl/wp-content/uploads/2022/10/kerfus-tm-scaled.jpg=
+- =https://robotics.stackexchange.com/questions/18102/what-are-the-equations-of-a-s-curve-position-path=
