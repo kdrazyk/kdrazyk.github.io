@@ -141,8 +141,9 @@ function draw() {
 
     textSize(20);
     fill('#24A9E8');
-    text('Komputer: aby dodać nowy segment kliknij dwa razy w dowolnym miejscu.', 10, 80);
-    text('Urządzenia mobilne: aby dodać nowy segment dotknij dwoma palcami w dowolnym miejscu.', 10, 110);
+    text('Add node:', 10, 80);
+    text('PC - double click', 10, 105);
+    text('Mobile - two fingers', 10, 130);
 
     // if (mySelect.selected() == 'Aligned') { controlMode = 'A'; }
     // else if (mySelect.selected() == 'Mirrored') { controlMode = 'B'; }
