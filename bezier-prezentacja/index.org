@@ -22,6 +22,41 @@
 # #FFDD4E żółty
 :end:
 
+* Planowanie trajektorii
+# https://xkcd.com/2821/
+#+ATTR_HTML: :height 800
+[[./img/xkcd-bezier.svg]]
+
+** Point to point
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+#+ATTR_HTML: :height 800
+[[./img/point-to-point.svg]]
+
+- interpolacja liniowa pomiędzy punktami
+- konieczne zatrzymanie w każdym punkcie
+- małe wymagania obliczeniowe
+#+REVEAL_HTML: </div>
+
+** Corner smoothing
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+#+ATTR_HTML: :height 800
+[[./img/corner-smoothing.svg]]
+
+- łagodniejsze zmiany kierunku
+- nie każdy punkt jest osiągany
+- większe wymagania obliczeniowe
+#+REVEAL_HTML: </div>
+
+** Krzywe Bézier
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
+#+ATTR_HTML: :height 800
+[[./img/bezier-trajektoria.svg]]
+
+- dowolna płynność ruchu
+- punkty mogą być osiągane
+- największe wymagania obliczeniowe
+#+REVEAL_HTML: </div>
+
 * Czym są krzywe Bézier
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
 \[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t)\\t \in [0,1] \end{cases} \]
@@ -82,41 +117,6 @@ Pierre Bézier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych prog
 
 Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
 #+end_notes
-
-* Planowanie trajektorii
-# https://xkcd.com/2821/
-#+ATTR_HTML: :height 800
-[[./img/xkcd-bezier.svg]]
-
-** Point to point
-#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
-#+ATTR_HTML: :height 800
-[[./img/point-to-point.svg]]
-
-- interpolacja liniowa pomiędzy punktami
-- konieczne zatrzymanie w każdym punkcie
-- małe wymagania obliczeniowe
-#+REVEAL_HTML: </div>
-
-** Corner smoothing
-#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
-#+ATTR_HTML: :height 800
-[[./img/corner-smoothing.svg]]
-
-- łagodniejsze zmiany kierunku
-- nie każdy punkt jest osiągany
-- większe wymagania obliczeniowe
-#+REVEAL_HTML: </div>
-
-** Krzywe Bézier
-#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
-#+ATTR_HTML: :height 800
-[[./img/bezier-trajektoria.svg]]
-
-- dowolna płynność ruchu
-- punkty mogą być osiągane
-- największe wymagania obliczeniowe
-#+REVEAL_HTML: </div>
 
 * Opis matematyczny
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
@@ -230,7 +230,7 @@ https://www.youtube.com/watch?v=jvPPXbo87ds
 * Dziękuję za uwagę
 Najważniejszy wniosek:
 #+begin_quote
-Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez zwiększają wydajność oraz dokładność robotów.
+Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez to zwiększają wydajność oraz dokładność robotów.
 #+end_quote
 
 * Bibliografia
