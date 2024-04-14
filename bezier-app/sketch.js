@@ -16,16 +16,15 @@ let controlMode = "A";
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    path = new Path();
 
+    path = new Path();
+    
     let selectMode = createButton('Aligned');
     let button = createButton('Reset');
     selectMode.position(140, 10);
 
     selectMode.style(buttonStyle);
     button.style(buttonStyle);
-
-
     
     button.position(10, 10);
     button.mousePressed(() => {
@@ -139,6 +138,11 @@ function touchEnded() {
 
 function draw() {
     background(bg_color);
+
+    textSize(20);
+    fill('#24A9E8');
+    text('Komputer: aby dodać nowy segment kliknij dwa razy w dowolnym miejscu.', 10, 80);
+    text('Urządzenia mobilne: aby dodać nowy segment dotknij dwoma palcami w dowolnym miejscu.', 10, 110);
 
     // if (mySelect.selected() == 'Aligned') { controlMode = 'A'; }
     // else if (mySelect.selected() == 'Mirrored') { controlMode = 'B'; }
