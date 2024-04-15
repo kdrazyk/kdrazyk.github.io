@@ -28,10 +28,10 @@ Chciałbym dziś powiedzieć kilka słów na temat krzywych Bezier oraz ich zast
 
 
 <section>
-<section id="slide-org63c143c">
-<h2 id="org63c143c">Planowanie trajektorii</h2>
+<section id="slide-org78b41f1">
+<h2 id="org78b41f1">Planowanie trajektorii</h2>
 
-<div id="org57c1c3d" class="figure">
+<div id="org526fc3c" class="figure">
 <p><img src="./img/xkcd-bezier.svg" alt="xkcd-bezier.svg" class="org-svg" height="800" />
 </p>
 </div>
@@ -46,11 +46,11 @@ Planując trajektorię musimy określić na czym nam zależy. Niekoniecznie najk
 </section>
 </section>
 <section>
-<section id="slide-orgca69fe0">
-<h3 id="orgca69fe0">Point to point</h3>
+<section id="slide-org6ddc1ee">
+<h3 id="org6ddc1ee">Point to point</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="org0a12944" class="figure">
+<div id="org0f86c34" class="figure">
 <p><img src="./img/point-to-point.svg" alt="point-to-point.svg" class="org-svg" height="800" />
 </p>
 </div>
@@ -74,11 +74,11 @@ Najprostszą metodą opisu ruchu pomiędzy punktami jest interpolacja liniowa lu
 </section>
 </section>
 <section>
-<section id="slide-orgffbcfeb">
-<h3 id="orgffbcfeb">Corner smoothing</h3>
+<section id="slide-orgaf9af4a">
+<h3 id="orgaf9af4a">Corner smoothing</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="org062618f" class="figure">
+<div id="orga08c6c0" class="figure">
 <p><img src="./img/corner-smoothing.svg" alt="corner-smoothing.svg" class="org-svg" height="800" />
 </p>
 </div>
@@ -103,11 +103,11 @@ Pewnym ulepszeniem poprzedniej metody jest metoda corner smoothing. Tutaj już n
 </section>
 </section>
 <section>
-<section id="slide-orgc0e679c">
-<h3 id="orgc0e679c">Krzywe Bézier</h3>
+<section id="slide-org61bc3f7">
+<h3 id="org61bc3f7">Krzywe Bézier</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="org60feb0f" class="figure">
+<div id="org6a09825" class="figure">
 <p><img src="./img/bezier-trajektoria.svg" alt="bezier-trajektoria.svg" class="org-svg" height="800" />
 </p>
 </div>
@@ -131,15 +131,15 @@ Aby uzyskać całkowitą płynność musimy sięgnąć po krzywe Bezier. Tutaj j
 </section>
 </section>
 <section>
-<section id="slide-orgba4ccdf">
-<h2 id="orgba4ccdf">Czym są krzywe Bézier</h2>
+<section id="slide-org1c8a627">
+<h2 id="org1c8a627">Czym są krzywe Bézier</h2>
 <div style="display:flex; justify-content:center; align-items:center;">
 <p>
 \[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t)\\t \in [0,1] \end{cases} \]
 </p>
 
 
-<div id="org9735b1e" class="figure">
+<div id="orgc8d6a2b" class="figure">
 <p><img src="./img/Bezier_curve.svg" alt="Bezier_curve.svg" class="org-svg" height="600" />
 </p>
 </div>
@@ -157,13 +157,13 @@ Krzywe Bezier należą do rodziny krzywych parametrycznych. To oznacza, że ich 
 </section>
 </section>
 <section>
-<section id="slide-org35655a4">
-<h3 id="org35655a4">Historia</h3>
+<section id="slide-orgd4eebd1">
+<h3 id="orgd4eebd1">Historia</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 <div style="width:30vw;">
 
 
-<div id="orgde29d61" class="figure">
+<div id="org9b3ffbb" class="figure">
 <p><img src="./img/Paul_de_Casteljau.jpg" alt="Paul_de_Casteljau.jpg" height="300" />
 </p>
 </div>
@@ -175,7 +175,7 @@ Paul de Casteljau
 <div style="width:30vw;">
 
 
-<div id="org0143771" class="figure">
+<div id="org0dd7acc" class="figure">
 <p><img src="./img/Pierre_Bezier.jpg" alt="Pierre_Bezier.jpg" height="300" />
 </p>
 </div>
@@ -187,7 +187,7 @@ Pierre Bézier
 <div style="width:30vw;">
 
 
-<div id="orgbf51da9" class="figure">
+<div id="orgdb334bd" class="figure">
 <p><img src="./img/Peugeot_204.jpg" alt="Peugeot_204.jpg" height="300" />
 </p>
 </div>
@@ -208,23 +208,23 @@ Krzywe Bezier zostały odkryte w połowie XXw. równolegle przez dwóch francuz�
 </section>
 </section>
 <section>
-<section id="slide-org143b174">
-<h2 id="org143b174">Gdzie są stosowane?</h2>
+<section id="slide-orgf598549">
+<h2 id="orgf598549">Gdzie są stosowane?</h2>
 <div style="display:flex; justify-content:center; align-items:center;">
 
-<div id="org5f2b288" class="figure">
+<div id="org0750aee" class="figure">
 <p><img src="./img/inkscape_bezier.png" alt="inkscape_bezier.png" height="500" />
 </p>
 </div>
 
 
-<div id="orgbf0ff00" class="figure">
+<div id="org53c91b2" class="figure">
 <p><img src="./img/jumping_squares.gif" alt="jumping_squares.gif" height="500" />
 </p>
 </div>
 
 
-<div id="org31ac3ec" class="figure">
+<div id="orgebd6548" class="figure">
 <p><img src="./img/fanuc_lrm200id.jpg" alt="fanuc_lrm200id.jpg" height="500" />
 </p>
 </div>
@@ -240,17 +240,17 @@ Obecnie krzywe Bezier możemy znaleźć praktycznie wszędzie. Poza oprogramowan
 </section>
 </section>
 <section>
-<section id="slide-orgf27e084">
-<h2 id="orgf27e084">Opis matematyczny</h2>
+<section id="slide-orgfe74c08">
+<h2 id="orgfe74c08">Opis matematyczny</h2>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="orgcb324df" class="figure">
+<div id="org1b13af0" class="figure">
 <p><img src="./img/welding-robot.jpg" alt="welding-robot.jpg" height="800" />
 </p>
 </div>
 
 
-<div id="org54530a3" class="figure">
+<div id="orgc66c42b" class="figure">
 <p><img src="./img/kerfus-tm-scaled.jpg" alt="kerfus-tm-scaled.jpg" height="800" />
 </p>
 </div>
@@ -268,8 +268,8 @@ Nie ma znaczenia czy sterujemy wielkim ramieniem przemysłowym przerzucającym k
 </section>
 </section>
 <section>
-<section id="slide-org6877180">
-<h3 id="org6877180">Interpolacja liniowa</h3>
+<section id="slide-orge81e9ac">
+<h3 id="orge81e9ac">Interpolacja liniowa</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 <p>
 \[\displaystyle \mathbf {P} (t)=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
@@ -289,8 +289,8 @@ Podstawowym narzędziem koniecznym do stworzenia krzywej Bezier jest prosta inte
 </section>
 </section>
 <section>
-<section id="slide-org4edfbc0">
-<h3 id="org4edfbc0">Algorytm de Casteljau</h3>
+<section id="slide-org1fc0b54">
+<h3 id="org1fc0b54">Algorytm de Casteljau</h3>
 <video width="960" loop data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
 
 <p class="fragment fade-in">
@@ -308,8 +308,8 @@ Bazując na interpolacji liniowej możemy zbudować krzywe wyższych rzędów pr
 </section>
 </section>
 <section>
-<section id="slide-orgfb81f31">
-<h4 id="orgfb81f31">Krzywa Bézier III rzędu</h4>
+<section id="slide-org4380cff">
+<h4 id="org4380cff">Krzywa Bézier III rzędu</h4>
 <video width="960" loop data-autoplay data-src="./img/de_casteljau2.mp4" type="video/mp4"></video>
 
 <aside class="notes">
@@ -323,8 +323,8 @@ To samo działa dla wyższych rzędów. Łączymy punkty i wykonujemy interpolac
 </section>
 </section>
 <section>
-<section id="slide-org3c3197e">
-<h4 id="org3c3197e">Krzywa Bézier XII rzędu</h4>
+<section id="slide-orgf748a0b">
+<h4 id="orgf748a0b">Krzywa Bézier XII rzędu</h4>
 <video width="960" loop data-autoplay data-src="./img/de_casteljau12.mp4" type="video/mp4"></video>
 
 
@@ -339,8 +339,8 @@ Możemy tak iść w nieskończoność, ale dosyć szybko zauważymy pewien probl
 </section>
 </section>
 <section>
-<section id="slide-org92ad02c">
-<h4 id="org92ad02c">Równanie opisaujące krzywą III rzędu</h4>
+<section id="slide-orgad6207e">
+<h4 id="orgad6207e">Równanie opisaujące krzywą III rzędu</h4>
 <p>
 \[\displaystyle \mathbf {B} (t)=(1-t)^{3}\mathbf {P} _{0}+3(1-t)^{2}t\mathbf {P} _{1}+3(1-t)t^{2}\mathbf {P} _{2}+t^{3}\mathbf {P} _{3},\ 0\leq t\leq 1\]
 </p>
@@ -360,11 +360,11 @@ Podstawiając w odpowiedni sposób wzór na interpolację liniową uzyskamy taki
 </section>
 </section>
 <section>
-<section id="slide-orgbb05d99">
-<h3 id="orgbb05d99">Wielomiany Bernsteina</h3>
+<section id="slide-org2682236">
+<h3 id="org2682236">Wielomiany Bernsteina</h3>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 
-<div id="org1f19da1" class="figure">
+<div id="orgdef0897" class="figure">
 <p><img src="./img/bernstein3.png" alt="bernstein3.png" height="600" />
 </p>
 </div>
@@ -385,10 +385,10 @@ Inną interpretację uzyskamy patrząc na taki zapis. Wielomiany bernsteina, prz
 </section>
 </section>
 <section>
-<section id="slide-org66fcfda">
-<h4 id="org66fcfda">Zakres oddziaływań punktów</h4>
+<section id="slide-org6876abe">
+<h4 id="org6876abe">Zakres oddziaływań punktów</h4>
 
-<div id="orgd4ca9bd" class="figure">
+<div id="org9b29be1" class="figure">
 <p><img src="./img/bernstein.png" alt="bernstein.png" height="800" />
 </p>
 </div>
@@ -408,8 +408,8 @@ To oddziaływanie staje się problematyczne gdy nasza krzywa rośnie. Poruszenie
 </section>
 </section>
 <section>
-<section id="slide-org22a86d0">
-<h2 id="org22a86d0">Spline - funkcja sklejana</h2>
+<section id="slide-orgb342f6a">
+<h2 id="orgb342f6a">Spline - funkcja sklejana</h2>
 <video width="1200" loop data-autoplay data-src="./img/spline.mp4" type="video/mp4"></video>
 
 <aside class="notes">
@@ -423,7 +423,7 @@ Istnieje rozwiązanie tego problemu. Okazuje się, że wystarczy krzywa 3 rzędu
 </section>
 <section>
 
-<div id="org9388c66" class="figure">
+<div id="orgda30ae8" class="figure">
 <p><img src="./img/spline-basis.png" alt="spline-basis.png" height="800" />
 </p>
 </div>
@@ -439,10 +439,10 @@ Analizując wykres wielomianów Bernsteina możemy zobaczyć, że zakes oddział
 </section>
 </section>
 <section>
-<section id="slide-org42cdfca">
-<h3 id="org42cdfca">Ciągłość</h3>
+<section id="slide-orga66035f">
+<h3 id="orga66035f">Ciągłość</h3>
 
-<div id="org2abbc6c" class="figure">
+<div id="org7bc09a3" class="figure">
 <p><img src="./img/c0.png" alt="c0.png" height="800" />
 </p>
 </div>
@@ -479,8 +479,8 @@ Poza tą ciągłością podstawową możemy analizować ciągłość pochodnych.
 </section>
 </section>
 <section>
-<section id="slide-org3b1868e">
-<h3 id="org3b1868e">C1 - prędkość</h3>
+<section id="slide-org8c13fe8">
+<h3 id="org8c13fe8">C1 - prędkość</h3>
 <video width="1200" loop data-autoplay data-src="./img/velocity.mp4" type="video/mp4"></video>
 
 <aside class="notes">
@@ -494,8 +494,8 @@ Teraz wracamy do poprzedniej krzywej, tylko tym razem biała strzałka reprezetu
 </section>
 </section>
 <section>
-<section id="slide-org019e70b">
-<h3 id="org019e70b">C2 - przyspieszenie</h3>
+<section id="slide-orgb31c530">
+<h3 id="orgb31c530">C2 - przyspieszenie</h3>
 <video width="1200" loop data-autoplay data-src="./img/c2.mp4" type="video/mp4"></video>
 
 
@@ -510,8 +510,8 @@ Taki przypadek możemy zobaczyć tutaj. Punkt P4 jest lustrzanym odbiciem P2 wzg
 </section>
 </section>
 <section>
-<section id="slide-org1c15993">
-<h3 id="org1c15993">Inne opcje</h3>
+<section id="slide-org3fed4a0">
+<h3 id="org3fed4a0">Inne opcje</h3>
 <video width="1200" loop data-autoplay data-src="./img/nurbs.mp4" type="video/mp4"></video>
 
 
@@ -526,10 +526,10 @@ Czy da się stworzyć krzywą o ciągłości C2, ale bez utraty kontroli lokalne
 </section>
 </section>
 <section>
-<section id="slide-orgd7d1039">
-<h2 id="orgd7d1039">Zadanie robotyka</h2>
+<section id="slide-orgdd9a601">
+<h2 id="orgdd9a601">Zadanie robotyka</h2>
 
-<div id="orgb187c94" class="figure">
+<div id="org61df34c" class="figure">
 <p><img src="./img/s-curve.png" alt="s-curve.png" height="800" />
 </p>
 </div>
@@ -550,10 +550,10 @@ Dlaczego ta płynność jest tak istotna? Ponieważ pozwala na zwiększenie wyda
 </section>
 </section>
 <section>
-<section id="slide-org4aafabd">
-<h2 id="org4aafabd">Badania naukowe</h2>
+<section id="slide-orgfe967c1">
+<h2 id="orgfe967c1">Badania naukowe</h2>
 
-<div id="org6dd62be" class="figure">
+<div id="org322d0cf" class="figure">
 <p><img src="./img/research.png" alt="research.png" height="800" />
 </p>
 </div>
@@ -570,11 +570,11 @@ Problem planowania trajektorii nie jest prosty, więc naturalnie powstaje na ten
 </section>
 </section>
 <section>
-<section id="slide-org91f57d5">
-<h2 id="org91f57d5">Aplikacja</h2>
+<section id="slide-orgd677b3d">
+<h2 id="orgd677b3d">Aplikacja</h2>
 <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 
-<div id="org2cad06f" class="figure">
+<div id="orgcbfaa5d" class="figure">
 <p><img src="./img/bezier-app-qrcode.svg" alt="bezier-app-qrcode.svg" class="org-svg" height="600" />
 </p>
 </div>
@@ -598,10 +598,10 @@ Na koniec przygotowałem dla was prostą aplikację, w której można zobaczyć 
 </section>
 </section>
 <section>
-<section id="slide-orgd998244">
-<h2 id="orgd998244">Więcej informacji</h2>
+<section id="slide-org2c87fe7">
+<h2 id="org2c87fe7">Więcej informacji</h2>
 
-<div id="org86ffbde" class="figure">
+<div id="org9f97371" class="figure">
 <p><img src="./img/the_continuity_of_splines.jpg" alt="the_continuity_of_splines.jpg" height="600" />
 </p>
 </div>
@@ -626,22 +626,14 @@ Jeśli kogoś zainteresował temat, to bardzo polecam materiał, który jest źr
 </section>
 </section>
 <section>
-<section id="slide-orgcc14db8">
-<h2 id="orgcc14db8">Dziękuję za uwagę</h2>
-<p>
-Najważniejszy wniosek:
-</p>
-<blockquote>
-<p>
-Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez to zwiększają wydajność oraz dokładność robotów.
-</p>
-</blockquote>
+<section id="slide-org7edbe60">
+<h2 id="org7edbe60">Dziękuję za uwagę</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-org00911e9">
-<h2 id="org00911e9">Bibliografia</h2>
+<section id="slide-orgeea399e">
+<h2 id="orgeea399e">Bibliografia</h2>
 <ul>
 <li>Wikipedia, Bézier curve, <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">https://en.wikipedia.org/wiki/B%C3%A9zier_curve</a></li>
 <li>Wikipedia, B-spline, <a href="https://en.wikipedia.org/wiki/B-spline">https://en.wikipedia.org/wiki/B-spline</a></li>
@@ -657,8 +649,8 @@ Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez to zw
 </section>
 </section>
 <section>
-<section id="slide-orga975533">
-<h2 id="orga975533">Źródła rysunków</h2>
+<section id="slide-org58fe44b">
+<h2 id="org58fe44b">Źródła rysunków</h2>
 <ul>
 <li><code>https://en.wikipedia.org/wiki/B%C3%A9zier_curve-/media/File:Bezier_curve.svg</code></li>
 <li><code>https://alchetron.com/Paul-de-Casteljau</code></li>

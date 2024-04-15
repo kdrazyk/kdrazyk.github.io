@@ -353,10 +353,10 @@ Jeśli kogoś zainteresował temat, to bardzo polecam materiał, który jest źr
 
 
 * Dziękuję za uwagę
-Najważniejszy wniosek:
-#+begin_quote
-Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez to zwiększają wydajność oraz dokładność robotów.
-#+end_quote
+# Najważniejszy wniosek:
+# #+begin_quote
+# Płynniejsze trajektorie ograniczają drgania i zużycie części, a przez to zwiększają wydajność oraz dokładność robotów.
+# #+end_quote
 
 * Bibliografia
 - Wikipedia, Bézier curve, https://en.wikipedia.org/wiki/B%C3%A9zier_curve
