@@ -22,15 +22,28 @@
 # #FFDD4E żółty
 :end:
 
+#+BEGIN_NOTES
+Chciałbym dziś powiedzieć kilka słów na temat krzywych Bezier oraz ich zastosowania w robotyce. Na poprzednim seminarium zobaczyliśmy wiele niesamowitych robotów, począwszy od dronów wojskowych, przez roboty humanoidalne o zadziwiającej zręczności, a kończąc na robotach inspekcyjnych poruszających się z gracją w trudnym środowisku. To co łączy te wszystkie roboty to problem wyznaczania trajektorii ruchu, a krzywe Bezier pomagają nam go rozwiązać.
+#+END_NOTES
+
 * Planowanie trajektorii
 # https://xkcd.com/2821/
 #+ATTR_HTML: :height 800
 [[./img/xkcd-bezier.svg]]
 
+#+BEGIN_NOTES
+Planując trajektorię musimy określić na czym nam zależy. Niekoniecznie najkrótsza droga będzie najlepsza. Może ważniejsza jest płynność ruchu czy odwiedzenie lub ominięcie określonych punktów. Przechodząc od teorii do praktyki nie możemy zapomnieć także o limitach mocy obliczeniowej procesora sterującego naszym robotem.
+#+END_NOTES
+
 ** Point to point
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 #+ATTR_HTML: :height 800
 [[./img/point-to-point.svg]]
+
+#+BEGIN_NOTES
+Najprostszą metodą opisu ruchu pomiędzy punktami jest interpolacja liniowa lub inaczej ruch point to point. Robot zaczyna w punkcie P0, przyspiesza, zwalnia i zatrzymuje się w P1, a następnie powtarza proces kierując się do P2 i P3. Największą wadą tej metody jest właśnie to ciągłe przyspieszanie i zwalnianie, które marnuje energię, a uzyskany ruch nie jest w ogóle płynny. Główny powód do wykorzystania tej metody to jej prostota, zarówno w implementacji, jak i obliczeniach. Z tą metodą możemy spotkać się na loboratorium w sali 010 programując roboty Fanuc, a konkretnie kiedy wykonujemy ruchy w trybie FINE.
+#+END_NOTES
+
 
 - interpolacja liniowa pomiędzy punktami
 - konieczne zatrzymanie w każdym punkcie
@@ -41,6 +54,12 @@
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 #+ATTR_HTML: :height 800
 [[./img/corner-smoothing.svg]]
+
+#+BEGIN_NOTES
+Pewnym ulepszeniem poprzedniej metody jest metoda corner smoothing. Tutaj już nie zatrzymujemy się, ponieważ zgodnie z nazwą rogi punktów pośrednich zostają wygładzone. Promień łuku zależy od tego jak dużą prędkość chcemy zachować pokonując zakręt. W robotach Fanuc odpowiada jej tryb CNT. Uzyskany ruch jest zdecydowanie bardziej płynny, ale rośnie też trudność opisu i ilość wymaganych obliczeń.
+#+END_NOTES
+
+
 
 - łagodniejsze zmiany kierunku
 - nie każdy punkt jest osiągany
@@ -57,6 +76,11 @@
 - największe wymagania obliczeniowe
 #+REVEAL_HTML: </div>
 
+#+BEGIN_NOTES
+Aby uzyskać całkowitą płynność musimy sięgnąć po krzywe Bezier. Tutaj już wpływ punktów na kształt krzywej nie jest oczywisty. Widzimy jedynie, że punkty pośrednie jakby przyciągają krzywą do siebie. Opis matematyczny takiej krzywej jest bardziej skomplikowany, ale jeśli możemy sobie na to pozwolić uzyskujemy w zamian idealnie płynny ruch. O ile mi wiadomo ten typ ruchu nie jest dostępny w robotach na laboratorium.
+#+END_NOTES
+
+
 * Czym są krzywe Bézier
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
 \[\begin{cases} x = f_1(t)\\ y = f_2(t)\\ z = f_3(t)\\t \in [0,1] \end{cases} \]
@@ -65,9 +89,11 @@
 [[./img/Bezier_curve.svg]]
 #+REVEAL_HTML: </div>
 
-#+begin_notes
-Krzywe Bezier należą do rodziny krzywych parametrycznych.
-#+end_notes
+
+#+BEGIN_NOTES
+Krzywe Bezier należą do rodziny krzywych parametrycznych. To oznacza, że ich kształt jest opisany przez pewien układ równań z wolnym parametrem t. Ten parametr określa gdzie na krzywej się znajdujemy - t=0 oznacza początek, t=1 koniec, a t=0.5 punkt idealnie w połowie długości krzywej. Przedstawiona krzywa jest krzywą 3 rzędu, ponieważ opisują ją 4 punkty. 
+#+END_NOTES
+
 
 ** Historia
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
@@ -95,7 +121,7 @@ Peugeot 204
 #+REVEAL_HTML: </div>
 
 #+begin_notes
-Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bézier. Nazwa uwzględnia tylko jednego z nich, ponieważ Pierre znacznie wcześniej opublikował swoje odkrycie.
+Krzywe Bezier zostały odkryte w połowie XXw. równolegle przez dwóch francuzów: matematyka Paul'a de Casteljau oraz inżyniera Pierre'a Bezier. Obaj panowie pracowali we francuskim przemyśle samochodowym. Ich motywacją było odnalezienie łatwego opisu matematycznego dla bardziej skomplikowanych krzywych niż linie proste i łuki. Na bazie krzywych Bezier powstały pierwsze oprogramowania CAD i CAM, które następnie zostały wykorzystane w pracy nad samochodami jak Peugeot 204.
 #+end_notes
 
 * Gdzie są stosowane?
@@ -111,11 +137,7 @@ Zostały odkryte niezależnie w połowie XXw. przez dwóch francuzów: matematyk
 #+REVEAL_HTML: </div>
 
 #+begin_notes
-Krzywe Bézier zrodziły się z potrzeby opisu matematycznego bardziej złożonych krztałtów niż linie proste i okręgi.
-
-Pierre Bézier wykorzystał swoje odkrycie aby stworzyć jeden z pierwszych programów CAD w 1968 roku!
-
-Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, animacji, czcionkach, a także robotyce, o czym będzie dalsza część tej prezentacji.
+Obecnie krzywe Bezier możemy znaleźć praktycznie wszędzie. Poza oprogramowaniem CAD znalazły zastosowanie w szeroko pojętej grafice oraz animacji komputerowej. Ponad to, ich znakomita zdolność opisu ruchu animowanych obiektów równie dobrze sprawdza się w kierowaniu ruchem robota.
 #+end_notes
 
 * Opis matematyczny
@@ -130,6 +152,11 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 
 #+REVEAL_HTML: </div>
 
+#+begin_notes
+Nie ma znaczenia czy sterujemy wielkim ramieniem przemysłowym przerzucającym karoserie samochodów w fabryce czy prostym robotem mobilnym rozwożącym chipsy pomiędzy alejkami sklepowymi. W każdym przypadku potrzebujemy dokładnego opisu matematycznego, który przetłumaczy nasze oczekiwania na ruch.
+#+end_notes
+
+
 ** Interpolacja liniowa
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
 \[\displaystyle \mathbf {P} (t)=(1-t)\mathbf {P} _{0}+t\mathbf {P} _{1},\ 0\leq t\leq 1\]
@@ -137,17 +164,38 @@ Poza oprogramowaniem CAD znalazły swoje zastosowanie w grafice komputerowej, an
 #+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/lerp.mp4" type="video/mp4"></video>
 #+REVEAL_HTML: </div>
 
+#+begin_notes
+Podstawowym narzędziem koniecznym do stworzenia krzywej Bezier jest prosta interpolacja liniowa. Funkcja P(t) opisuje odcinek łączący punkty P0 i P1. Parametr t, tak jak wspomniałem wcześniej, określa położenia pośrednie. W literaturze często zwana jest LERP.
+#+end_notes
+
+
 ** Algorytm de Casteljau
-#+REVEAL_HTML: <video width="960" data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/de_casteljau.mp4" type="video/mp4"></video>
 
 #+ATTR_REVEAL: :frag fade-in
 Krzywa Bézier II rzędu
 
+
+#+begin_notes
+Bazując na interpolacji liniowej możemy zbudować krzywe wyższych rzędów przy pomocy algorytmu de Casteljau. Wystarczy dodać kolejny segment, wykonać równocześnie interpolację na obu, a przesuwające się punkty połączyć trzecim segmentem. Punkt poruszający się po tym dodatkowym segmencie wyznaczy krzywą bezier II rzędu.
+#+end_notes
+
 *** Krzywa Bézier III rzędu
-#+REVEAL_HTML: <video width="960" data-autoplay data-src="./img/de_casteljau2.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/de_casteljau2.mp4" type="video/mp4"></video>
+
+#+begin_notes
+To samo działa dla wyższych rzędów. Łączymy punkty i wykonujemy interpolację aż zostanie tylko jeden.
+#+end_notes
+
 
 *** Krzywa Bézier XII rzędu
-#+REVEAL_HTML: <video width="960" data-autoplay data-src="./img/de_casteljau12.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="960" loop data-autoplay data-src="./img/de_casteljau12.mp4" type="video/mp4"></video>
+
+
+#+begin_notes
+Możemy tak iść w nieskończoność, ale dosyć szybko zauważymy pewien problem - konstrukcja krzywej staje się bardzo skomplikowana.
+#+end_notes
+
 
 *** Równanie opisaujące krzywą III rzędu
 
@@ -156,13 +204,23 @@ Krzywa Bézier II rzędu
 #+ATTR_REVEAL: :frag fade-in
 \[\mathbf B(t) = \begin{bmatrix} 1 & t & t^2 & t^3 \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
 
+#+BEGIN_notes
+Podstawiając w odpowiedni sposób wzór na interpolację liniową uzyskamy taki wielomian. Ten zapis jest mało czytelny, więc często korzysta się z zapisu macierzowego. Teraz już wyraźnie widać wektor potęg t, wektor z punktami ograniczającymi oraz pośrodku macierz charakterystyczną. Ta macierz określa kształt krzywej, a jej współczynniki mogą być zmieniane aby uzyskać krzywe o innych właściwościach.
+#+end_notes
+
+
 ** Wielomiany Bernsteina
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:row;">
 #+ATTR_HTML: :height 600
 [[./img/bernstein3.png]]
 
-\[\begin{split} B(t) = \,&  P_0 \cdot (-t^3 + 3t^2 -3t +1) + \\& P_1 \cdot (3t^3 - 6t^2 + 3t) +\\& P_3 \cdot (-3t^3 +3t^2) +\\&P_3 \cdot (t^3) \end{split} \]
+\[\begin{split} B(t) = \,&  P_0 \cdot (-t^3 + 3t^2 -3t +1) + \\& P_1 \cdot (3t^3 - 6t^2 + 3t) +\\& P_2 \cdot (-3t^3 +3t^2) +\\&P_3 \cdot (t^3) \end{split} \]
 #+REVEAL_HTML: </div>
+
+#+BEGIN_notes
+Inną interpretację uzyskamy patrząc na taki zapis. Wielomiany bernsteina, przez które wymnożone zostały punkty określają ich oddziaływanie na krzywą. Punktowi P0 odpowiada na wykresie linia czerwona, P2 niebieska, P3 zielona i P4 żółta. Dla każdej wartości t suma wielomianów musi wynosić 1. Wyraźnie widać, że wszystkie punkty oddziaływują całą krzywą poza jej krańcami.
+#+end_notes
+
 
 *** Zakres oddziaływań punktów
 #+ATTR_HTML: :height 800
@@ -171,16 +229,36 @@ Krzywa Bézier II rzędu
 #+ATTR_REVEAL: :frag fade-in
 Krzywe Bézier nie umożliwiają kontroli lokalnej
 
+
+#+BEGIN_notes
+To oddziaływanie staje się problematyczne gdy nasza krzywa rośnie. Poruszenie dowolnym punktem zmienia kształt całości, więc nie możemy dokonywać zmian lokalnych, które często są potrzebne.
+#+end_notes
+
 * Spline - funkcja sklejana
-#+REVEAL_HTML: <video width="1200" data-autoplay data-src="./img/spline.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="1200" loop data-autoplay data-src="./img/spline.mp4" type="video/mp4"></video>
+
+#+BEGIN_notes
+Istnieje rozwiązanie tego problemu. Okazuje się, że wystarczy krzywa 3 rzędu, do której końca możemy dołączać kolejne tworząc spline lub inaczej funkcję sklejaną. Znaczenie wolnego parametru ulega zmianie, część po przecinku dalej określa położenie na krzywej, ale liczba całkowita mówi na której krzywej się znajdujemy. 
+#+end_notes
+
 
 #+REVEAL: split
 #+ATTR_HTML: :height 800
 [[./img/spline-basis.png]]
 
+#+BEGIN_notes
+Analizując wykres wielomianów Bernsteina możemy zobaczyć, że zakes oddziaływań punktów kończy się na punkcie wspólnym z kolejną krzywą. Taki opis ma wiele zalet i jedną wadę - ciągłość.
+#+end_notes
+
+
 ** Ciągłość
 #+ATTR_HTML: :height 800
 [[./img/c0.png]]
+
+#+BEGIN_notes
+Pokazana na slajdzie krzywa wydaje się być ciągła. Rzeczywiście tak jest, końce poszczególnych fragmentów są połączone, co w efekcie daje ciągłość C0, ale to nie jedyny typ ciągłości jaki możemy analizować.
+#+end_notes
+
 
 #+REVEAL: split
 \[\mathbf B(t) = \begin{bmatrix} 1 & t & t^2 & t^3 \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
@@ -191,14 +269,35 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 #+ATTR_REVEAL: :frag fade-in
 \[ \frac{d^2}{dt^2} \mathbf B(t) = \begin{bmatrix} 0 & 0 & 2 & 6t \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 0 & 0\\-3 & 3 & 0 & 0\\3 & -6 & 3 & 0\\-1 & 3 & -3 & 1\\ \end{bmatrix} \cdot \begin{bmatrix} P_0 \\ P_1 \\ P_2 \\ P_3 \end{bmatrix}\]
 
+#+BEGIN_notes
+Poza tą ciągłością podstawową możemy analizować ciągłość pochodnych. Zapis macierzowy znacznie to ułatwia. Wystarczy różniczkować wektor t. Pierwsza pochodna po czasie to inaczej prędkość, a druga - przyspieszenie.
+#+end_notes
+
 ** C1 - prędkość
-#+REVEAL_HTML: <video width="1200" data-autoplay data-src="./img/velocity.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="1200" loop data-autoplay data-src="./img/velocity.mp4" type="video/mp4"></video>
+
+#+BEGIN_notes
+Teraz wracamy do poprzedniej krzywej, tylko tym razem biała strzałka reprezetuje zmiany wektora prędkości. Wszystkie nieciągłości są wyraźnie widoczne na wykresie z prawej strony. Ta krzywa ma więc jedynie ciągłość C0, ponieważ na każdym łączeniu prędkość zmienia się skokowo. Aby uzyskać ciągłość C1 uchwyty dołączone do węzła muszą być swoim lustrzanym odbiciem.
+#+end_notes
+
 
 ** C2 - przyspieszenie
-#+REVEAL_HTML: <video width="1200" data-autoplay data-src="./img/c2.mp4" type="video/mp4"></video>
+#+REVEAL_HTML: <video width="1200" loop data-autoplay data-src="./img/c2.mp4" type="video/mp4"></video>
+
+
+#+BEGIN_notes
+Taki przypadek możemy zobaczyć tutaj. Punkt P4 jest lustrzanym odbiciem P2 względem P3, podobnie jest dla P5 i P7 itd. Tym razem krzywa spełnia jeszcze warunek na ciągłość C2, a więc wykres przyspieszenia także jest ciągły. Każdy kolejny warunek ciągłości oznacza pewną utratę kontroli. W praktyce to już najpłynniejszy ruch jaki możemy uzyskać, ponieważ spełniając warunki ciągłości C3 zmienilibyśmy krzywą sklejaną z powrotem w jedną długą krzywą bezier. 
+#+end_notes
+
 
 ** Inne opcje
 #+REVEAL_HTML: <video width="1200" loop data-autoplay data-src="./img/nurbs.mp4" type="video/mp4"></video>
+
+
+#+BEGIN_notes
+Czy da się stworzyć krzywą o ciągłości C2, ale bez utraty kontroli lokalnej? Tak, ale zawsze kosztem czegoś. Bardzo często wykorzystywanym spline'm jest NURBS (nierównomierna, wymierna krzywa B sklejana). W tym przypadku krzywa nie przechodzi już przez żaden punkt, nawet ten końcowy.
+#+end_notes
+
 
 * Zadanie robotyka
 # https://robotics.stackexchange.com/questions/18102/what-are-the-equations-of-a-s-curve-position-path
@@ -206,9 +305,23 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 #+ATTR_HTML: :height 800
 [[./img/s-curve.png]]
 
+
+#+BEGIN_notes
+To o czym mówiliśmy do tej pory to matematyka, ale w robotyce nie można zapominać o części praktycznej. Po określeniu trajektorii musimy rozbić ruch na poszczególne osie robota. Jeśli wybrana ścieżka ma ciągłość C2, to przyspieszenie będzie narastać i maleć liniowo, a zmiany skokowe pojawią się dopiero na zrywie. Silniki są w stanie to zrobić. Gorzej jeśli wybralibyśmy krzywą o ciągłości C0, ponieważ taki ruch jest fizycznie niewykonywalny.
+
+Dlaczego ta płynność jest tak istotna? Ponieważ pozwala na zwiększenie wydajności (nie tracimy energii an niepotrzebne przyspieszanie i zwalnianie), ograniczenie drgań, które prowadzą do szybszego zużycia części i mogą pogorszyć efekt pracy robota, jeśli np. polerujemy powierzchnię.
+#+end_notes
+
+
 * Badania naukowe
 #+ATTR_HTML: :height 800
 [[./img/research.png]]
+
+
+#+BEGIN_notes
+Problem planowania trajektorii nie jest prosty, więc naturalnie powstaje na ten temat bardzo dużo prac naukowych. W samym 2023 roku było ich wg. Google Scholar około 5 tysięcy. Jeśli zależy nam na stworzeniu w pełni naturalnego robota humanoidalnego, to praca nad tym jest nie mniej ważna niż rozwój sztucznej inteligencji.
+#+end_notes
+
 
 * Aplikacja
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
@@ -218,6 +331,12 @@ Krzywe Bézier nie umożliwiają kontroli lokalnej
 https://kdrazyk.github.io/ → Aplikacja
 #+REVEAL_HTML: </div>
 
+
+#+BEGIN_notes
+Na koniec przygotowałem dla was prostą aplikację, w której można zobaczyć na własną rękę jak zachowują się krzywe. Jeśli ktoś nigdy nie miał z nimi styczności, to na pewno warto spróbować.
+#+end_notes
+
+
 #+REVEAL: split data-background-iframe="../bezier-app/index.html" data-background-interactive
 * Więcej informacji
 #+ATTR_HTML: :height 600
@@ -226,6 +345,12 @@ https://kdrazyk.github.io/ → Aplikacja
 *Freya Holmér*
 
 https://www.youtube.com/watch?v=jvPPXbo87ds
+
+
+#+BEGIN_notes
+Jeśli kogoś zainteresował temat, to bardzo polecam materiał, który jest źródłem wszystkich wykorzystanych w prezentacji animacji autorstwa Frei Holmer.
+#+end_notes
+
 
 * Dziękuję za uwagę
 Najważniejszy wniosek:
