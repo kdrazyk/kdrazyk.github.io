@@ -1,0 +1,27 @@
+:properties:
+#+title: Projekt i implementacja systemu sterowania manipulatora
+#+author: Kacper Drążyk
+#+date: <2025-01-28 Tue>
+#+description: Prezentacja na obronę pracy: Projekt i implementacja systemu sterowania manipulatora
+#+startup: show2levels latexpreview
+#+options: date:nil author:nil timestamp:nil toc:nil reveal_slide_number:c num:nil reveal_width:1400 reveal_height:1000
+#+reveal_root: ../reveal.js
+#+reveal_trans: slide
+#+reveal_theme: bezier
+#+reveal_hlevel: 5
+# Set up the title slide.
+#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h2>%s</h2><h3>%A %a</h3><img src="%q" style="width:500px; height:500px;"><p><a href="%u">%u</a></p><p>
+#+REVEAL_TALK_URL: https://kdrazyk.github.io
+
+# paleta kolorów
+# #FFFFFF biały
+# #FE1053 czerwony
+# #33BBFB niebieski
+# #0CFFA7 zielony
+# #FFDD4E żółty
+:end:
+
+* Planowanie trajektorii
+# https://xkcd.com/2821/
+#+ATTR_HTML: :height 800
+test
