@@ -10,8 +10,7 @@
 #+reveal_theme: bezier
 #+reveal_hlevel: 5
 # Set up the title slide.
-#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h2>%s</h2><h3>%A %a</h3><img src="%q" style="width:500px; height:500px;"><p><a href="%u">%u</a></p><p>
-#+REVEAL_TALK_URL: https://kdrazyk.github.io
+#+REVEAL_TITLE_SLIDE: <h2>%t</h2><h2>%s</h2><h3>%A %a</h3>
 
 # paleta kolorów
 # #FFFFFF biały
@@ -21,7 +20,123 @@
 # #FFDD4E żółty
 :end:
 
-* Planowanie trajektorii
-# https://xkcd.com/2821/
+#+REVEAL: split
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+#+REVEAL_HTML: <div>
 #+ATTR_HTML: :height 800
-test
+[[./img/irb.png]]
+#+REVEAL_HTML: <p>ABB IRB 460</p></div>
+# https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/dobot.webp]]
+#+REVEAL_HTML: <p>Dobot MG400</p></div>
+# https://edutech.expert/hpeciai/39b728558295085addfd1cfe82261338/pol_pl_DOBOT-MG400-520_1.webp
+#+REVEAL_HTML: </div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/manipulator_onshape.png]]
+#+REVEAL_HTML: <p>Projekt manipulatora 3R<br>w programie Onshape</p></div>
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/manipulator.png]]
+#+REVEAL_HTML: <p>Manipulator 3R<br>z elastycznym chwytakiem</p></div>
+#+REVEAL_HTML: </div>
+
+#+REVEAL: split data-background-video="./img/przekladnia.mp4" data-background-video-loop data-background-video-muted data-background-size=contain
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/drake.png]]
+#+REVEAL_HTML: <p>Drake - zestaw narzędzi symulacyjnych autorstwa <br>MIT Robot Locomotion Group</p></div>
+
+#+REVEAL: split data-background-video="./img/manipulator_flexi_rex.webm" data-background-video-loop data-background-video-muted data-background-size=contain
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/kinematyka.png]]
+#+REVEAL_HTML: <p>Schemat kinematyki manipulatora z przegubami równoległymi</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 800
+[[./img/dh.png]]
+#+REVEAL_HTML: <p>Schemat kinematyki równoważnego manipulatora szeregowego</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 500
+[[./img/pole2d.png]]
+#+REVEAL_HTML: <p>Przekrój pola roboczego manipulatora</p></div>
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 500
+[[./img/pole3d.png]]
+#+REVEAL_HTML: <p>Pole robocze manipulatora<br>w izometrii</p></div>
+#+REVEAL_HTML: </div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/diagram_ogolny.png]]
+#+REVEAL_HTML: <p>Ogólny diagram układu regulacji</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/diagram_pracy_automatycznej.png]]
+#+REVEAL_HTML: <p>Diagram układu regulacji dla pracy automatycznej</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/diagram_teleoperacji.png]]
+#+REVEAL_HTML: <p>Diagram układu regulacji dla teleoperacji</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :height 600
+[[./img/bezier.png]]
+#+REVEAL_HTML: <p>Krzywa B-sklejana złożona z dwóch krzywych Béziera stopnia trzeciego</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/C0_150g.png]]
+#+REVEAL_HTML: <p>Wykres sterowań dla trajektorii klasy C0</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/C1_150g.png]]
+#+REVEAL_HTML: <p>Wykres sterowań dla trajektorii klasy C1</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/C2_150g.png]]
+#+REVEAL_HTML: <p>Wykres sterowań dla trajektorii klasy C2</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/t2_ograniczenie_qd06.png]]
+#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy niewielkim ograniczeniu prędkości przegubowej</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/t2_ograniczenie_qd04.png]]
+#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy znaczącym ograniczeniu prędkości przegubowej</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/t05_bez_ograniczenia.png]]
+#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych działających bez ograniczeń z wysoką prędkością ruchu</p></div>
+

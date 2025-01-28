@@ -16,17 +16,203 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h2>Projekt i implementacja systemu sterowania manipulatora</h2><h2></h2><h3> Kacper Drążyk</h3><img src="" style="width:500px; height:500px;"><p><a href="https://kdrazyk.github.io">https://kdrazyk.github.io</a></p><p>
+<h2>Projekt i implementacja systemu sterowania manipulatora</h2><h2></h2><h3> Kacper Drążyk</h3>
 </section>
 
+</section>
 <section>
-<section id="slide-orgd3e8674">
-<h2 id="orgd3e8674">Planowanie trajektorii</h2>
-<p height="800">
-test
+<div style="display:flex; justify-content:center; align-items:center;">
+<div>
+
+<div id="org69ff9f2" class="figure">
+<p><img src="./img/irb.png" alt="irb.png" height="800" />
 </p>
+</div>
+<p>ABB IRB 460</p></div>
+
+<div>
+
+<div id="orga3659be" class="figure">
+<p><img src="./img/dobot.webp" alt="dobot.webp" height="800" />
+</p>
+</div>
+<p>Dobot MG400</p></div>
+
+</div>
+
 </section>
+<section>
+<div style="display:flex; justify-content:center; align-items:center;">
+<div>
+
+<div id="org0634bf3" class="figure">
+<p><img src="./img/manipulator_onshape.png" alt="manipulator_onshape.png" height="800" />
+</p>
+</div>
+<p>Projekt manipulatora 3R<br>w programie Onshape</p></div>
+<div>
+
+<div id="org6549d2b" class="figure">
+<p><img src="./img/manipulator.png" alt="manipulator.png" height="800" />
+</p>
+</div>
+<p>Manipulator 3R<br>z elastycznym chwytakiem</p></div>
+</div>
+
 </section>
+<section data-background-video="./img/przekladnia.mp4" data-background-video-loop data-background-video-muted data-background-size=contain>
+
+</section>
+<section>
+<div>
+
+<div id="org40e3b0b" class="figure">
+<p><img src="./img/drake.png" alt="drake.png" height="800" />
+</p>
+</div>
+<p>Drake - zestaw narzędzi symulacyjnych autorstwa <br>MIT Robot Locomotion Group</p></div>
+
+</section>
+<section data-background-video="./img/manipulator_flexi_rex.webm" data-background-video-loop data-background-video-muted data-background-size=contain>
+
+</section>
+<section>
+<div>
+
+<div id="org2665644" class="figure">
+<p><img src="./img/kinematyka.png" alt="kinematyka.png" height="800" />
+</p>
+</div>
+<p>Schemat kinematyki manipulatora z przegubami równoległymi</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org610888b" class="figure">
+<p><img src="./img/dh.png" alt="dh.png" height="800" />
+</p>
+</div>
+<p>Schemat kinematyki równoważnego manipulatora szeregowego</p></div>
+
+</section>
+<section>
+<div style="display:flex; justify-content:center; align-items:center;">
+<div>
+
+<div id="org1b477d2" class="figure">
+<p><img src="./img/pole2d.png" alt="pole2d.png" height="500" />
+</p>
+</div>
+<p>Przekrój pola roboczego manipulatora</p></div>
+<div>
+
+<div id="orgee2ff39" class="figure">
+<p><img src="./img/pole3d.png" alt="pole3d.png" height="500" />
+</p>
+</div>
+<p>Pole robocze manipulatora<br>w izometrii</p></div>
+</div>
+
+</section>
+<section>
+<div>
+
+<div id="org48e8b1c" class="figure">
+<p><img src="./img/diagram_ogolny.png" alt="diagram_ogolny.png" width="1400" />
+</p>
+</div>
+<p>Ogólny diagram układu regulacji</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org77063da" class="figure">
+<p><img src="./img/diagram_pracy_automatycznej.png" alt="diagram_pracy_automatycznej.png" width="1400" />
+</p>
+</div>
+<p>Diagram układu regulacji dla pracy automatycznej</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org28cde4d" class="figure">
+<p><img src="./img/diagram_teleoperacji.png" alt="diagram_teleoperacji.png" width="1400" />
+</p>
+</div>
+<p>Diagram układu regulacji dla teleoperacji</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org2c5826b" class="figure">
+<p><img src="./img/bezier.png" alt="bezier.png" height="600" />
+</p>
+</div>
+<p>Krzywa B-sklejana złożona z dwóch krzywych Béziera stopnia trzeciego</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org81160bd" class="figure">
+<p><img src="./img/C0_150g.png" alt="C0_150g.png" width="1400" />
+</p>
+</div>
+<p>Wykres sterowań dla trajektorii klasy C0</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org81b1ba5" class="figure">
+<p><img src="./img/C1_150g.png" alt="C1_150g.png" width="1400" />
+</p>
+</div>
+<p>Wykres sterowań dla trajektorii klasy C1</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org8987dd3" class="figure">
+<p><img src="./img/C2_150g.png" alt="C2_150g.png" width="1400" />
+</p>
+</div>
+<p>Wykres sterowań dla trajektorii klasy C2</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org32525f4" class="figure">
+<p><img src="./img/t2_ograniczenie_qd06.png" alt="t2_ograniczenie_qd06.png" width="1400" />
+</p>
+</div>
+<p>Porównanie sterowników kinematycznych przy niewielkim ograniczeniu prędkości przegubowej</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="org894b6c6" class="figure">
+<p><img src="./img/t2_ograniczenie_qd04.png" alt="t2_ograniczenie_qd04.png" width="1400" />
+</p>
+</div>
+<p>Porównanie sterowników kinematycznych przy znaczącym ograniczeniu prędkości przegubowej</p></div>
+
+</section>
+<section>
+<div>
+
+<div id="orgd3169f4" class="figure">
+<p><img src="./img/t05_bez_ograniczenia.png" alt="t05_bez_ograniczenia.png" width="1400" />
+</p>
+</div>
+<p>Porównanie sterowników kinematycznych działających bez ograniczeń z wysoką prędkością ruchu</p></div>
 </div>
 </div>
 <script src="../reveal.js/dist/reveal.js"></script>
