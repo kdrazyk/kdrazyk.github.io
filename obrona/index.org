@@ -140,3 +140,4 @@
 [[./img/t05_bez_ograniczenia.png]]
 #+REVEAL_HTML: <p>Porównanie sterowników kinematycznych działających bez ograniczeń z wysoką prędkością ruchu</p></div>
 
+#+REVEAL: split
