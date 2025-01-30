@@ -46,7 +46,7 @@
 #+REVEAL_HTML: <p>Manipulator 3R<br>z elastycznym chwytakiem</p></div>
 #+REVEAL_HTML: </div>
 
-#+REVEAL: split data-background-video="./img/przekladnia.mp4" data-background-video-loop data-background-video-muted data-background-size=contain
+# #+REVEAL: split data-background-video="./img/przekladnia.mp4" data-background-video-loop data-background-video-muted data-background-size=contain
 
 #+REVEAL: split
 #+REVEAL_HTML: <div>
@@ -125,19 +125,26 @@
 #+REVEAL: split
 #+REVEAL_HTML: <div>
 #+ATTR_HTML: :width 1400
-[[./img/t2_ograniczenie_qd06.png]]
-#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy niewielkim ograniczeniu prędkości przegubowej</p></div>
-
-#+REVEAL: split
-#+REVEAL_HTML: <div>
-#+ATTR_HTML: :width 1400
-[[./img/t2_ograniczenie_qd04.png]]
-#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy znaczącym ograniczeniu prędkości przegubowej</p></div>
-
-#+REVEAL: split
-#+REVEAL_HTML: <div>
-#+ATTR_HTML: :width 1400
 [[./img/t05_bez_ograniczenia.png]]
 #+REVEAL_HTML: <p>Porównanie sterowników kinematycznych działających bez ograniczeń z wysoką prędkością ruchu</p></div>
 
 #+REVEAL: split
+#+REVEAL_HTML: <div>
+#+ATTR_HTML: :width 1400
+[[./img/t2_ograniczenie_qd06.png]]
+#+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy ograniczeniu prędkości przegubowej</p></div>
+
+# #+REVEAL: split
+# #+REVEAL_HTML: <div>
+# #+ATTR_HTML: :width 1400
+# [[./img/t2_ograniczenie_qd04.png]]
+# #+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy znaczącym ograniczeniu prędkości przegubowej</p></div>
+
+#+REVEAL: split
+#+REVEAL_HTML: <p align="left">
+Źródła:
+- ABB IRB 460: https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
+- Dobot MG400:
+https://www.dobot-robots.com/products/desktop-four-axis/mg400.html 
+- MIT Drake: https://drake.mit.edu/
+#+REVEAL_HTML: </p>
