@@ -20,39 +20,39 @@
 # #FFDD4E żółty
 :end:
 
-#+REVEAL: split
-#+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
-#+REVEAL_HTML: <div>
-#+ATTR_HTML: :height 800
-[[./img/irb.png]]
-#+REVEAL_HTML: <p>ABB IRB 460</p></div>
-# https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
-#+REVEAL_HTML: <div>
-#+ATTR_HTML: :height 800
-[[./img/dobot.webp]]
-#+REVEAL_HTML: <p>Dobot MG400</p></div>
-# https://edutech.expert/hpeciai/39b728558295085addfd1cfe82261338/pol_pl_DOBOT-MG400-520_1.webp
-#+REVEAL_HTML: </div>
+# #+REVEAL: split
+# #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
+# #+REVEAL_HTML: <div>
+# #+ATTR_HTML: :height 800
+# [[./img/irb.png]]
+# #+REVEAL_HTML: <p>ABB IRB 460</p></div>
+# # https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
+# #+REVEAL_HTML: <div>
+# #+ATTR_HTML: :height 800
+# [[./img/dobot.webp]]
+# #+REVEAL_HTML: <p>Dobot MG400</p></div>
+# # https://edutech.expert/hpeciai/39b728558295085addfd1cfe82261338/pol_pl_DOBOT-MG400-520_1.webp
+# #+REVEAL_HTML: </div>
 
 #+REVEAL: split
 #+REVEAL_HTML: <div style="display:flex; justify-content:center; align-items:center;">
 #+REVEAL_HTML: <div>
 #+ATTR_HTML: :height 800
 [[./img/manipulator_onshape.png]]
-#+REVEAL_HTML: <p>Projekt manipulatora 3R<br>w programie Onshape</p></div>
+#+REVEAL_HTML: <p>Projekt manipulatora<br>w programie Onshape</p></div>
 #+REVEAL_HTML: <div>
 #+ATTR_HTML: :height 800
 [[./img/manipulator.png]]
-#+REVEAL_HTML: <p>Manipulator 3R<br>z elastycznym chwytakiem</p></div>
+#+REVEAL_HTML: <p>Manipulator<br>z elastycznym chwytakiem</p></div>
 #+REVEAL_HTML: </div>
 
 # #+REVEAL: split data-background-video="./img/przekladnia.mp4" data-background-video-loop data-background-video-muted data-background-size=contain
 
-#+REVEAL: split
-#+REVEAL_HTML: <div>
-#+ATTR_HTML: :height 800
-[[./img/drake.png]]
-#+REVEAL_HTML: <p>Drake - zestaw narzędzi symulacyjnych autorstwa <br>MIT Robot Locomotion Group</p></div>
+# #+REVEAL: split
+# #+REVEAL_HTML: <div>
+# #+ATTR_HTML: :height 800
+# [[./img/drake.png]]
+# #+REVEAL_HTML: <p>Drake - zestaw narzędzi symulacyjnych autorstwa <br>MIT Robot Locomotion Group</p></div>
 
 #+REVEAL: split data-background-video="./img/manipulator_flexi_rex.webm" data-background-video-loop data-background-video-muted data-background-size=contain
 
@@ -141,10 +141,10 @@
 # #+REVEAL_HTML: <p>Porównanie sterowników kinematycznych przy znaczącym ograniczeniu prędkości przegubowej</p></div>
 
 #+REVEAL: split
-#+REVEAL_HTML: <p align="left">
-Źródła:
-- ABB IRB 460: https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
-- Dobot MG400:
-https://www.dobot-robots.com/products/desktop-four-axis/mg400.html 
-- MIT Drake: https://drake.mit.edu/
-#+REVEAL_HTML: </p>
+# #+REVEAL_HTML: <p align="left">
+# Źródła:
+# - ABB IRB 460: https://new.abb.com/products/robotics/robots/articulated-robots/irb-460
+# - Dobot MG400:
+# https://www.dobot-robots.com/products/desktop-four-axis/mg400.html 
+# - MIT Drake: https://drake.mit.edu/
+# #+REVEAL_HTML: </p>
