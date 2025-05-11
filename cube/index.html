@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cube Remote Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .connection-controls {
+            display: flex;
+            gap: 10px;
+        }
+        input, button {
+            padding: 8px;
+        }
+        #url {
+            flex-grow: 1;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        #value-display {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cube Remote Control</h1>
+        
+        <div class="connection-controls">
+            <input type="text" id="url" placeholder="ws://cube.local:80/ws" value="ws://cube.local:80/ws">
+            <button id="connect-btn">Connect</button>
+        </div>
+        
+        <div class="slider-container">
+            <input type="range" id="slider" min="-360" max="360" value="0">
+            <div id="value-display">Z orientation: 0</div>
+        </div>
+        
+        <div id="status">Status: Disconnected</div>
+    </div>
+
+    <script>
+        let socket = null;
+        const connectBtn = document.getElementById('connect-btn');
+        const slider = document.getElementById('slider');
+        const valueDisplay = document.getElementById('value-display');
+        const statusDisplay = document.getElementById('status');
+        const urlInput = document.getElementById('url');
+
+        // Update value display when slider changes
+        slider.addEventListener('input', function() {
+            const value = slider.value;
+            valueDisplay.textContent = `Z orientation: ${value}`;
+            
+            // Send to websocket if connected
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.send(`DC45,-33,${value}`);
+                socket.send(`s`);
+            }
+        });
+
+        // Handle connect/disconnect button
+        connectBtn.addEventListener('click', function() {
+            if (socket && socket.readyState !== WebSocket.CLOSED) {
+                // Disconnect
+                socket.close();
+                connectBtn.textContent = 'Connect';
+                statusDisplay.textContent = 'Status: Disconnected';
+            } else {
+                // Connect
+                const url = urlInput.value;
+                if (!url) {
+                    alert('Please enter a WebSocket URL');
+                    return;
+                }
+                
+                try {
+                    socket = new WebSocket(url);
+                    
+                    socket.onopen = function() {
+                        statusDisplay.textContent = 'Status: Connected';
+                        connectBtn.textContent = 'Disconnect';
+                        // Send initial slider value
+                        <!-- get bettery charge -->
+                        socket.send(`b`);
+                        <!-- set Z angle control param -->
+                        socket.send(`PC60,3.5,0.05,0.02,0.001,0,60,3.5,0.05,0.02,0.001,0,0.5`);
+                        <!-- set initial desired Z angle -->
+                        socket.send(`DC45,-33,${slider.value}`);
+                    };
+                    
+                    socket.onmessage = function(event) {
+                        console.log('Received from server:', event.data);
+                    };
+                    
+                    socket.onclose = function() {
+                        statusDisplay.textContent = 'Status: Disconnected';
+                        connectBtn.textContent = 'Connect';
+                    };
+                    
+                    socket.onerror = function(error) {
+                        statusDisplay.textContent = 'Status: Error connecting';
+                        console.error('WebSocket Error:', error);
+                    };
+                    
+                } catch (e) {
+                    statusDisplay.textContent = 'Status: Invalid WebSocket URL';
+                    console.error('Error:', e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
